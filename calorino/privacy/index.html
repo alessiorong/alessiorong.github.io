@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Privacy Policy di Calorino — app per il tracking nutrizionale. Informativa sul trattamento dei dati personali ai sensi del GDPR (Reg. UE 2016/679).">
+  <title>Privacy Policy — Calorino</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #C4622D;
+      --primary-light: #FBF0EA;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --bg: #F9FAFB;
+      --card: #FFFFFF;
+      --border: #E5E7EB;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-dot {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .header-app-name {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .header-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .doc-header {
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-header h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .intro-box {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 40px;
+      font-size: 15px;
+      color: #4B3728;
+      line-height: 1.7;
+    }
+
+    section {
+      margin-bottom: 44px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #374151;
+    }
+
+    ul, ol {
+      margin: 8px 0 14px 22px;
+    }
+
+    li {
+      margin-bottom: 7px;
+      color: #374151;
+    }
+
+    li strong {
+      color: var(--text);
+    }
+
+    .provider-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .provider-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .provider-card p {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .provider-card a {
+      font-size: 13px;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      margin: 16px 0 20px;
+    }
+
+    .right-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .right-item .right-title {
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .right-item .right-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+
+    .contact-box p {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+      background: var(--card);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      .doc-header h1 { font-size: 26px; }
+      h2 { font-size: 18px; }
+      .rights-grid { grid-template-columns: 1fr 1fr; }
+      main { padding: 28px 18px 60px; }
+    }
+
+    @media (max-width: 400px) {
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-dot">C</div>
+      <div>
+        <div class="header-app-name">Calorino</div>
+        <div class="header-tagline">Traccia la tua nutrizione</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="doc-header">
+      <h1>Privacy Policy</h1>
+      <div class="doc-meta">
+        <span class="badge">GDPR Compliant</span>
+        Ultimo aggiornamento: 28 maggio 2026 &nbsp;·&nbsp; Versione 1.0
+      </div>
+    </div>
+
+    <div class="intro-box">
+      La tua privacy è importante per noi. Questa informativa descrive quali dati personali raccogliamo tramite l'applicazione mobile <strong>Calorino</strong>, come li utilizziamo, con chi li condividiamo e quali diritti hai, in conformità con il Regolamento UE 2016/679 (<strong>GDPR</strong>) e il D.Lgs. 196/2003 (Codice Privacy italiano).
+    </div>
+
+    <!-- ===== 1 ===== -->
+    <section>
+      <h2>1. Titolare del Trattamento</h2>
+      <p>Il titolare del trattamento dei dati personali raccolti tramite Calorino è:</p>
+      <div class="contact-box">
+        <p><strong>Alessio Rongione</strong></p>
+        <p>Email: <a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a></p>
+      </div>
+      <p style="margin-top:12px;">Per qualsiasi richiesta inerente al trattamento dei tuoi dati personali puoi contattarci all'indirizzo email indicato sopra.</p>
+    </section>
+
+    <!-- ===== 2 ===== -->
+    <section>
+      <h2>2. Dati Personali Raccolti</h2>
+
+      <h3>2.1 — Dati di Account</h3>
+      <p>Quando crei un account su Calorino raccogliamo:</p>
+      <ul>
+        <li><strong>Nome e cognome</strong></li>
+        <li><strong>Indirizzo email</strong></li>
+        <li><strong>Password</strong> — conservata esclusivamente in forma cifrata (hash) tramite Supabase Auth; non abbiamo mai accesso alla password in chiaro</li>
+        <li>Se utilizzi <strong>Google Sign-In</strong> o <strong>Sign in with Apple</strong>: nome ed email forniti da tali servizi di terze parti</li>
+      </ul>
+
+      <h3>2.2 — Dati di Salute e Nutrizione</h3>
+      <p>Per fornirti il servizio di tracking nutrizionale raccogliamo:</p>
+      <ul>
+        <li>Peso corporeo (inserito manualmente dall'utente)</li>
+        <li>Obiettivi calorici e macro-nutrienti giornalieri (calorie, proteine, carboidrati, grassi)</li>
+        <li>Pasti registrati con relativi alimenti, porzioni e valori nutrizionali</li>
+        <li>Diete personalizzate e piani alimentari</li>
+        <li>Dati di aderenza alla dieta, streak e progressi nel tempo</li>
+        <li>Consumo di acqua giornaliero (se utilizzi la funzione promemoria idratazione)</li>
+      </ul>
+      <p>Questi dati rientrano nella categoria dei <strong>dati relativi alla salute</strong> ai sensi dell'Art. 9 GDPR. Il loro trattamento avviene esclusivamente su tuo consenso esplicito (Art. 9(2)(a) GDPR).</p>
+
+      <h3>2.3 — Immagini dei Pasti</h3>
+      <p>Se utilizzi la funzione di analisi fotografica, l'immagine del pasto viene inviata in modo sicuro ai server di <strong>Google (Gemini AI)</strong> per il riconoscimento degli alimenti e il calcolo dei valori nutrizionali. <strong>Le immagini non vengono conservate permanentemente sui nostri server</strong> una volta completata l'analisi. Google tratta le immagini secondo la propria Privacy Policy.</p>
+
+      <h3>2.4 — Dati Tecnici e di Utilizzo</h3>
+      <p>Raccogliamo automaticamente alcune informazioni tecniche necessarie al corretto funzionamento dell'app:</p>
+      <ul>
+        <li>Date e orari di accesso</li>
+        <li>Preferenze dell'app (tema grafico, notifiche attive)</li>
+        <li>Log di errori tecnici e crash anonimi</li>
+      </ul>
+
+      <h3>2.5 — Dati Pubblicitari</h3>
+      <p>Nella versione gratuita dell'app vengono visualizzati annunci tramite <strong>Google AdMob</strong>. AdMob può raccogliere un identificatore pubblicitario anonimizzato del dispositivo (<em>IDFA</em> su iOS) per mostrare annunci pertinenti. Puoi limitare o disattivare questo tracciamento nelle impostazioni del tuo dispositivo (Impostazioni → Privacy e sicurezza → Pubblicità Apple).</p>
+    </section>
+
+    <!-- ===== 3 ===== -->
+    <section>
+      <h2>3. Finalità e Base Giuridica del Trattamento</h2>
+      <ul>
+        <li>
+          <strong>Fornitura del servizio</strong> — Art. 6(1)(b) GDPR (esecuzione del contratto): gestione dell'account, calcolo dei macro-nutrienti, salvataggio dei pasti, tracking del peso e aderenza alla dieta.
+        </li>
+        <li>
+          <strong>Analisi nutrizionale tramite AI</strong> — Art. 6(1)(a) e Art. 9(2)(a) GDPR (consenso): elaborazione delle immagini dei pasti tramite Gemini AI di Google, attivabile solo su richiesta esplicita dell'utente.
+        </li>
+        <li>
+          <strong>Comunicazioni di servizio</strong> — Art. 6(1)(b) GDPR: email di conferma account, reset password, notifiche push relative al servizio (promemoria idratazione).
+        </li>
+        <li>
+          <strong>Sicurezza e prevenzione delle frodi</strong> — Art. 6(1)(f) GDPR (legittimo interesse): monitoraggio di accessi anomali e protezione dell'integrità del servizio.
+        </li>
+        <li>
+          <strong>Miglioramento del servizio</strong> — Art. 6(1)(f) GDPR (legittimo interesse): analisi aggregata e anonimizzata delle funzionalità utilizzate.
+        </li>
+        <li>
+          <strong>Pubblicità</strong> — Art. 6(1)(a) GDPR (consenso): visualizzazione di annunci tramite AdMob nella versione gratuita, soggetta alle preferenze pubblicitarie del dispositivo.
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 4 ===== -->
+    <section>
+      <h2>4. Fornitori di Servizi Terzi (Sub-Responsabili del Trattamento)</h2>
+      <p>Per erogare Calorino ci avvaliamo dei seguenti fornitori. Ciascuno tratta i dati secondo accordi di trattamento conformi al GDPR:</p>
+
+      <div class="provider-card">
+        <div class="provider-name">Supabase, Inc.</div>
+        <p><strong>Ruolo:</strong> Infrastruttura cloud, database e autenticazione</p>
+        <p><strong>Dati trattati:</strong> Account (email, nome, password cifrata), profilo nutrizionale, pasti registrati, peso, preferenze</p>
+        <p><strong>Sede legale:</strong> USA — trasferimento dati con Standard Contractual Clauses (SCC, Art. 46 GDPR)</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></p>
+      </div>
+
+      <div class="provider-card">
+        <div class="provider-name">Google LLC</div>
+        <p><strong>Ruolo (a):</strong> Gemini AI — analisi nutrizionale delle immagini dei pasti</p>
+        <p><strong>Ruolo (b):</strong> Google Sign-In — autenticazione tramite account Google</p>
+        <p><strong>Ruolo (c):</strong> AdMob — erogazione di annunci pubblicitari nella versione gratuita</p>
+        <p><strong>Dati trattati:</strong> (a) Immagini dei pasti; (b) Email e nome Google; (c) Identificatori pubblicitari anonimi</p>
+        <p><strong>Sede legale:</strong> USA — trasferimento dati con Standard Contractual Clauses (SCC)</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="provider-card">
+        <div class="provider-name">Apple Inc.</div>
+        <p><strong>Ruolo (a):</strong> Sign in with Apple — autenticazione tramite Apple ID</p>
+        <p><strong>Ruolo (b):</strong> App Store — distribuzione dell'app e gestione degli acquisti in-app</p>
+        <p><strong>Dati trattati:</strong> (a) Email (può essere anonimizzata da Apple su scelta dell'utente) e nome; (b) Dati di acquisto gestiti direttamente da Apple</p>
+        <p><strong>Sede legale:</strong> USA — trasferimento dati con Standard Contractual Clauses (SCC)</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://www.apple.com/legal/privacy/it/" target="_blank" rel="noopener">apple.com/legal/privacy</a></p>
+      </div>
+    </section>
+
+    <!-- ===== 5 ===== -->
+    <section>
+      <h2>5. Trasferimento dei Dati verso Paesi Terzi</h2>
+      <p>I fornitori indicati nella sezione precedente (Supabase, Google, Apple) hanno sede negli <strong>Stati Uniti d'America</strong>. Il trasferimento dei dati personali verso tali Paesi avviene nel rispetto delle garanzie adeguate previste dall'Art. 46 GDPR, specificatamente tramite l'adozione delle <strong>Clausole Contrattuali Standard (Standard Contractual Clauses — SCC)</strong> approvate dalla Commissione Europea, che garantiscono un livello di protezione equivalente a quello previsto nell'Unione Europea.</p>
+    </section>
+
+    <!-- ===== 6 ===== -->
+    <section>
+      <h2>6. Periodo di Conservazione</h2>
+      <p>I dati personali sono conservati per l'intera durata dell'account attivo. Quando elimini il tuo account tramite <strong>Impostazioni → Zona Pericolosa → Elimina account</strong>, tutti i tuoi dati vengono cancellati in modo permanente entro <strong>30 giorni</strong> dalla richiesta.</p>
+      <p>Dati anonimi e aggregati (es. statistiche di utilizzo senza possibilità di identificazione) possono essere conservati a tempo indeterminato per finalità statistiche.</p>
+      <p>In presenza di obblighi legali specifici (es. adempimenti fiscali derivanti da abbonamenti premium), alcuni dati potranno essere conservati per i periodi previsti dalla normativa vigente.</p>
+    </section>
+
+    <!-- ===== 7 ===== -->
+    <section>
+      <h2>7. I Tuoi Diritti (GDPR)</h2>
+      <p>In qualità di interessato hai i seguenti diritti, esercitabili in qualsiasi momento contattandoci all'indirizzo indicato nella sezione 12:</p>
+      <div class="rights-grid">
+        <div class="right-item">
+          <span class="right-title">Accesso (Art. 15)</span>
+          <span class="right-desc">Ottenere conferma del trattamento e una copia dei tuoi dati personali</span>
+        </div>
+        <div class="right-item">
+          <span class="right-title">Rettifica (Art. 16)</span>
+          <span class="right-desc">Correggere dati inesatti o completare dati incompleti</span>
+        </div>
+        <div class="right-item">
+          <span class="right-title">Cancellazione (Art. 17)</span>
+          <span class="right-desc">Ottenere la cancellazione dei tuoi dati ("diritto all'oblio")</span>
+        </div>
+        <div class="right-item">
+          <span class="right-title">Limitazione (Art. 18)</span>
+          <span class="right-desc">Ottenere la limitazione del trattamento in determinati casi</span>
+        </div>
+        <div class="right-item">
+          <span class="right-title">Portabilità (Art. 20)</span>
+          <span class="right-desc">Ricevere i dati in formato strutturato e leggibile da macchina</span>
+        </div>
+        <div class="right-item">
+          <span class="right-title">Opposizione (Art. 21)</span>
+          <span class="right-desc">Opporti al trattamento basato su legittimo interesse</span>
+        </div>
+        <div class="right-item">
+          <span class="right-title">Revoca consenso</span>
+          <span class="right-desc">Revocare il consenso in qualsiasi momento, senza effetto retroattivo</span>
+        </div>
+        <div class="right-item">
+          <span class="right-title">Reclamo (Art. 77)</span>
+          <span class="right-desc">Presentare reclamo all'Autorità di controllo competente</span>
+        </div>
+      </div>
+      <p>Risponderemo alle tue richieste entro <strong>30 giorni</strong> dal ricevimento. In caso di richieste complesse, il termine può essere esteso di ulteriori 60 giorni, previa comunicazione.</p>
+    </section>
+
+    <!-- ===== 8 ===== -->
+    <section>
+      <h2>8. Reclamo al Garante per la Protezione dei Dati Personali</h2>
+      <p>Hai il diritto di presentare reclamo all'autorità di controllo competente nel Paese in cui risiedi. Per gli utenti italiani l'autorità è:</p>
+      <div class="contact-box">
+        <p><strong>Garante per la Protezione dei Dati Personali</strong></p>
+        <p>Sito web: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a></p>
+        <p>Email: <a href="mailto:garante@gpdp.it">garante@gpdp.it</a></p>
+        <p>PEC: <a href="mailto:protocollo@pec.gpdp.it">protocollo@pec.gpdp.it</a></p>
+      </div>
+    </section>
+
+    <!-- ===== 9 ===== -->
+    <section>
+      <h2>9. Minori</h2>
+      <p>Calorino non è destinato a utenti di età inferiore ai <strong>16 anni</strong> (o all'età minima prevista dalla normativa del Paese di residenza, ove superiore). Non raccogliamo consapevolmente dati personali di minori al di sotto di tale soglia.</p>
+      <p>Se sei genitore o tutore legale e ritieni che tuo figlio abbia creato un account o ci abbia fornito dati personali, contattaci immediatamente all'indirizzo email indicato nella sezione 12 e provvederemo alla cancellazione.</p>
+    </section>
+
+    <!-- ===== 10 ===== -->
+    <section>
+      <h2>10. Cookie e Tecnologie di Tracciamento</h2>
+      <p>Calorino è un'applicazione mobile nativa e <strong>non utilizza cookie di navigazione</strong>. La persistenza della sessione è gestita tramite token sicuri di Supabase Auth.</p>
+      <p>Nella versione gratuita, Google AdMob può utilizzare l'<strong>IDFA</strong> (Identifier for Advertisers) del tuo dispositivo iOS per mostrare annunci pertinenti. In conformità con App Tracking Transparency (ATT) di Apple, all'avvio dell'app ti verrà chiesto il consenso per tale tracciamento. Puoi modificare la tua scelta in qualsiasi momento da: <em>Impostazioni → Privacy e sicurezza → Pubblicità Apple</em>.</p>
+    </section>
+
+    <!-- ===== 11 ===== -->
+    <section>
+      <h2>11. Sicurezza dei Dati</h2>
+      <p>Adottiamo misure tecniche e organizzative adeguate per proteggere i tuoi dati personali da accessi non autorizzati, perdita, divulgazione o alterazione:</p>
+      <ul>
+        <li>Comunicazioni cifrate tramite <strong>TLS/HTTPS</strong></li>
+        <li>Password conservate esclusivamente in forma di <strong>hash crittografico</strong></li>
+        <li>Accesso ai dati limitato al personale strettamente necessario (principio del minimo privilegio)</li>
+        <li>Infrastruttura gestita da Supabase con standard di sicurezza SOC 2 Type 2</li>
+      </ul>
+      <p>Nessun sistema di trasmissione dati su internet è tuttavia garantito al 100%. In caso di violazione dei dati che ponga a rischio i tuoi diritti, ti notificheremo tempestivamente nei modi previsti dal GDPR.</p>
+    </section>
+
+    <!-- ===== 12 ===== -->
+    <section>
+      <h2>12. Modifiche alla Privacy Policy</h2>
+      <p>Ci riserviamo il diritto di aggiornare questa Privacy Policy in qualsiasi momento. In caso di modifiche <strong>sostanziali</strong> ti informeremo tramite una notifica in-app o via email prima dell'entrata in vigore delle modifiche. La data dell'ultimo aggiornamento è sempre indicata in cima a questo documento.</p>
+      <p>L'uso continuato dell'app dopo la pubblicazione delle modifiche costituisce accettazione della nuova informativa. Se non accetti le modifiche, puoi eliminare il tuo account e cessare l'utilizzo del servizio.</p>
+    </section>
+
+    <!-- ===== 13 ===== -->
+    <section>
+      <h2>13. Contatti</h2>
+      <p>Per qualsiasi domanda, richiesta di esercizio dei diritti o segnalazione relativa al trattamento dei tuoi dati personali:</p>
+      <div class="contact-box">
+        <p><strong>Alessio Rongione — Titolare del Trattamento</strong></p>
+        <p>Email: <a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a></p>
+        <p style="margin-top:8px; font-size:13px; color:#6B7280;">Risposta garantita entro 30 giorni dalla ricezione della richiesta.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Calorino &nbsp;·&nbsp;
+      <a href="../privacy/">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="../terms/">Termini di Servizio</a>
+    </p>
+  </footer>
+
+</body>
+</html>

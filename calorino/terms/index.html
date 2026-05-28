@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Termini di Servizio di Calorino — app per il tracking nutrizionale. Leggi le condizioni d'uso prima di utilizzare il servizio.">
+  <title>Termini di Servizio — Calorino</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #C4622D;
+      --primary-light: #FBF0EA;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --bg: #F9FAFB;
+      --card: #FFFFFF;
+      --border: #E5E7EB;
+      --warning-bg: #FFFBEB;
+      --warning-border: #D97706;
+      --warning-text: #92400E;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-dot {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .header-app-name {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .header-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .doc-header {
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-header h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .intro-box {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: 15px;
+      color: #4B3728;
+      line-height: 1.7;
+    }
+
+    .warning-box {
+      background: var(--warning-bg);
+      border: 1px solid #FDE68A;
+      border-left: 4px solid var(--warning-border);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin-bottom: 40px;
+    }
+
+    .warning-box .warning-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--warning-text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .warning-box p {
+      font-size: 14px;
+      color: #78350F;
+      margin-bottom: 6px;
+    }
+
+    .warning-box p:last-child { margin-bottom: 0; }
+
+    section {
+      margin-bottom: 44px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #374151;
+    }
+
+    ul, ol {
+      margin: 8px 0 14px 22px;
+    }
+
+    li {
+      margin-bottom: 7px;
+      color: #374151;
+    }
+
+    li strong {
+      color: var(--text);
+    }
+
+    .highlight-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+
+    .contact-box p {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+      background: var(--card);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      .doc-header h1 { font-size: 26px; }
+      h2 { font-size: 18px; }
+      main { padding: 28px 18px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-dot">C</div>
+      <div>
+        <div class="header-app-name">Calorino</div>
+        <div class="header-tagline">Traccia la tua nutrizione</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="doc-header">
+      <h1>Termini di Servizio</h1>
+      <div class="doc-meta">
+        <span class="badge">App Store Compliant</span>
+        Ultimo aggiornamento: 28 maggio 2026 &nbsp;·&nbsp; Versione 1.0
+      </div>
+    </div>
+
+    <div class="intro-box">
+      Benvenuto in <strong>Calorino</strong>. Leggendo e accettando questi Termini di Servizio dichiari di aver compreso e accettato le condizioni d'uso dell'applicazione. Ti invitiamo a leggerli attentamente prima di utilizzare il servizio.
+    </div>
+
+    <!-- AVVISO MEDICO PROMINENTE -->
+    <div class="warning-box">
+      <div class="warning-title">
+        ⚠️ Avviso Medico Importante
+      </div>
+      <p><strong>Calorino è uno strumento di supporto al benessere personale, non uno strumento medico.</strong> Le informazioni, i calcoli nutrizionali e i suggerimenti forniti dall'app non costituiscono consulenza medica, nutrizionale o dietologica professionale e non devono essere interpretati come tali.</p>
+      <p>Prima di intraprendere qualsiasi programma alimentare, modificare la tua dieta in modo significativo o utilizzare i dati dell'app per gestire condizioni di salute (diabete, disturbi alimentari, malattie metaboliche, ecc.), <strong>consulta un medico, un nutrizionista o un dietologo abilitato</strong>.</p>
+      <p>L'autore di Calorino declina ogni responsabilità per decisioni prese esclusivamente sulla base delle informazioni fornite dall'applicazione.</p>
+    </div>
+
+    <!-- ===== 1 ===== -->
+    <section>
+      <h2>1. Accettazione dei Termini</h2>
+      <p>Utilizzando l'applicazione mobile Calorino (di seguito "il Servizio" o "l'App"), disponibile su Apple App Store, dichiari di:</p>
+      <ul>
+        <li>Avere almeno <strong>16 anni</strong> di età (o l'età minima richiesta dalla normativa del tuo Paese per il consenso al trattamento dei dati personali, ove superiore)</li>
+        <li>Aver letto, compreso e accettato integralmente questi Termini di Servizio</li>
+        <li>Aver letto e accettato la nostra <a href="../privacy/">Privacy Policy</a></li>
+      </ul>
+      <p>Se non accetti questi termini, non sei autorizzato a utilizzare il Servizio.</p>
+      <p>I presenti Termini costituiscono un accordo vincolante tra te ("Utente") e <strong>Alessio Rongione</strong> ("Fornitore", "noi"), titolare e sviluppatore dell'applicazione.</p>
+    </section>
+
+    <!-- ===== 2 ===== -->
+    <section>
+      <h2>2. Descrizione del Servizio</h2>
+      <p>Calorino è un'applicazione mobile per iOS che permette di:</p>
+      <ul>
+        <li>Registrare pasti e alimenti con i relativi valori nutrizionali (calorie, proteine, carboidrati, grassi, fibre)</li>
+        <li>Calcolare automaticamente i valori nutrizionali tramite intelligenza artificiale (Google Gemini AI) partendo dalla descrizione testuale o da immagini dei pasti</li>
+        <li>Monitorare il peso corporeo nel tempo</li>
+        <li>Impostare e verificare obiettivi calorici e macro-nutrienti giornalieri</li>
+        <li>Seguire diete personalizzate e monitorare l'aderenza</li>
+        <li>Gestire promemoria per l'idratazione giornaliera</li>
+        <li>Accedere a funzionalità avanzate tramite abbonamento Premium</li>
+      </ul>
+      <p>Il Servizio è disponibile in versione gratuita (con annunci pubblicitari) e in versione Premium (senza pubblicità e con funzionalità aggiuntive).</p>
+    </section>
+
+    <!-- ===== 3 ===== -->
+    <section>
+      <h2>3. Avviso sull'Accuratezza dei Dati Nutrizionali</h2>
+      <p>I valori nutrizionali visualizzati nell'app sono calcolati tramite intelligenza artificiale (Google Gemini AI) e da banche dati alimentari. Tali valori sono <strong>stime indicative</strong> e non sostituiscono le informazioni nutrizionali ufficiali riportate sulle etichette dei prodotti alimentari.</p>
+      <p>L'accuratezza dei calcoli dipende da fattori quali:</p>
+      <ul>
+        <li>La qualità e il dettaglio delle descrizioni inserite dall'utente</li>
+        <li>La qualità delle immagini fornite per l'analisi fotografica</li>
+        <li>Le variazioni naturali nella composizione degli alimenti</li>
+        <li>I limiti intrinseci dei modelli di intelligenza artificiale</li>
+      </ul>
+      <p>Il Fornitore non garantisce la precisione assoluta dei dati nutrizionali e declina qualsiasi responsabilità per decisioni prese esclusivamente sulla base di tali stime, in particolare per soggetti con condizioni mediche che richiedono un controllo preciso dell'apporto calorico o nutrizionale.</p>
+    </section>
+
+    <!-- ===== 4 ===== -->
+    <section>
+      <h2>4. Registrazione e Sicurezza dell'Account</h2>
+      <p>Per utilizzare Calorino è necessario creare un account tramite:</p>
+      <ul>
+        <li>Email e password</li>
+        <li>Google Sign-In</li>
+        <li>Sign in with Apple</li>
+      </ul>
+      <p>L'Utente è responsabile di:</p>
+      <ul>
+        <li>Mantenere la <strong>riservatezza delle credenziali</strong> di accesso</li>
+        <li>Non condividere il proprio account con terze parti</li>
+        <li>Notificare immediatamente al Fornitore qualsiasi accesso non autorizzato al proprio account (<a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a>)</li>
+        <li>Fornire informazioni veritiere e aggiornate in fase di registrazione</li>
+      </ul>
+      <p>Il Fornitore non è responsabile di eventuali perdite o danni derivanti dall'uso non autorizzato dell'account da parte di terzi per cause imputabili all'Utente.</p>
+    </section>
+
+    <!-- ===== 5 ===== -->
+    <section>
+      <h2>5. Condotte Vietate</h2>
+      <p>Nell'utilizzo del Servizio è espressamente vietato:</p>
+      <ul>
+        <li>Utilizzare il Servizio per scopi illegali o non autorizzati</li>
+        <li>Tentare di accedere ai sistemi, ai dati o agli account di altri utenti</li>
+        <li>Effettuare attività di reverse engineering, decompilazione o disassemblaggio dell'app</li>
+        <li>Caricare contenuti illeciti, offensivi, falsi o che violino diritti di terzi</li>
+        <li>Utilizzare strumenti automatici (bot, scraper) per accedere o raccogliere dati dal Servizio</li>
+        <li>Interferire con il corretto funzionamento dell'infrastruttura del Servizio</li>
+        <li>Creare account multipli per aggirare limitazioni o sanzioni</li>
+        <li>Commercializzare l'accesso al proprio account a terzi</li>
+      </ul>
+      <p>La violazione di queste disposizioni può comportare la sospensione o la cancellazione definitiva dell'account, senza rimborso di eventuali abbonamenti attivi, nonché l'adozione di azioni legali ove appropriato.</p>
+    </section>
+
+    <!-- ===== 6 ===== -->
+    <section>
+      <h2>6. Abbonamento Premium</h2>
+
+      <h3>6.1 — Funzionalità</h3>
+      <p>L'abbonamento Premium di Calorino rimuove la pubblicità e sblocca funzionalità avanzate. I dettagli delle funzionalità incluse nel piano Premium sono descritti nell'App e possono essere aggiornati nel tempo.</p>
+
+      <h3>6.2 — Pagamenti e Rinnovo</h3>
+      <p>Gli acquisti in-app e gli abbonamenti sono gestiti esclusivamente tramite <strong>Apple App Store</strong>. I pagamenti sono soggetti ai Termini e Condizioni di Apple. L'abbonamento si rinnova automaticamente al termine di ogni periodo salvo disdetta.</p>
+
+      <h3>6.3 — Cancellazione e Rimborsi</h3>
+      <p>Puoi cancellare il rinnovo automatico in qualsiasi momento tramite <em>Impostazioni → Il tuo nome → Abbonamenti</em> su iOS, almeno 24 ore prima della data di rinnovo. I rimborsi sono gestiti direttamente da Apple secondo le relative politiche. Il Fornitore non ha la possibilità di elaborare rimborsi diretti per acquisti effettuati tramite App Store.</p>
+
+      <h3>6.4 — Modifiche al Prezzo</h3>
+      <p>Il Fornitore si riserva il diritto di modificare il prezzo dell'abbonamento. Le variazioni di prezzo saranno comunicate prima del rinnovo successivo, come previsto dalle politiche di Apple.</p>
+    </section>
+
+    <!-- ===== 7 ===== -->
+    <section>
+      <h2>7. Pubblicità</h2>
+      <p>La versione gratuita di Calorino include annunci pubblicitari erogati da <strong>Google AdMob</strong>. Utilizzando la versione gratuita, accetti la visualizzazione di tali annunci.</p>
+      <p>Il Fornitore non è responsabile per il contenuto degli annunci di terze parti né per i prodotti o servizi pubblicizzati. Per informazioni sulla gestione dei dati pubblicitari, consulta la <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">politica sulla pubblicità di Google</a>.</p>
+      <p>L'abbonamento Premium rimuove completamente la pubblicità.</p>
+    </section>
+
+    <!-- ===== 8 ===== -->
+    <section>
+      <h2>8. Contenuti dell'Utente</h2>
+      <p>L'Utente mantiene la titolarità di tutti i dati e i contenuti inseriti nell'app (pasti, foto, note). Fornendo tali contenuti al Servizio, concede al Fornitore una licenza limitata, non esclusiva, gratuita e revocabile per elaborarli esclusivamente allo scopo di erogare il Servizio.</p>
+      <p>L'Utente garantisce di possedere i diritti necessari sui contenuti caricati e di non violare diritti di terze parti.</p>
+    </section>
+
+    <!-- ===== 9 ===== -->
+    <section>
+      <h2>9. Proprietà Intellettuale</h2>
+      <p>L'applicazione Calorino, inclusi il suo codice sorgente, grafica, interfaccia utente, marchi, loghi e contenuti originali, è di proprietà esclusiva di <strong>Alessio Rongione</strong> e protetta dalle leggi sul diritto d'autore e sulla proprietà intellettuale applicabili.</p>
+      <p>È vietata qualsiasi riproduzione, distribuzione, modifica o utilizzo commerciale del Servizio o dei suoi componenti senza preventiva autorizzazione scritta del Fornitore.</p>
+    </section>
+
+    <!-- ===== 10 ===== -->
+    <section>
+      <h2>10. Esclusione di Garanzie</h2>
+      <p>Fermo restando quanto previsto dalla normativa vigente a tutela dei consumatori, il Servizio è fornito <strong>"così come è" (as-is)</strong> e <strong>"secondo disponibilità"</strong>. Il Fornitore non rilascia garanzie esplicite o implicite riguardo a:</p>
+      <ul>
+        <li>Continuità, disponibilità ininterrotta o assenza di errori del Servizio</li>
+        <li>Accuratezza assoluta dei dati nutrizionali calcolati</li>
+        <li>Idoneità del Servizio a scopi medici o clinici specifici</li>
+        <li>Compatibilità futura con tutti i dispositivi e versioni di iOS</li>
+      </ul>
+    </section>
+
+    <!-- ===== 11 ===== -->
+    <section>
+      <h2>11. Limitazione di Responsabilità</h2>
+      <p>Nei limiti consentiti dalla legge applicabile, il Fornitore non sarà responsabile per:</p>
+      <ul>
+        <li>Danni indiretti, incidentali, speciali o consequenziali derivanti dall'uso o dall'impossibilità di utilizzo del Servizio</li>
+        <li>Perdita di dati derivante da malfunzionamenti tecnici o da cancellazione dell'account</li>
+        <li>Decisioni di natura alimentare, medica o di salute prese dall'Utente sulla base dei dati forniti dall'app</li>
+        <li>Interruzioni del Servizio dovute a manutenzione, aggiornamenti o cause di forza maggiore</li>
+        <li>Comportamenti o contenuti di terze parti (inclusi i fornitori di servizi indicati nella Privacy Policy)</li>
+      </ul>
+      <p>La responsabilità complessiva del Fornitore nei confronti dell'Utente per qualsiasi causa è in ogni caso limitata all'importo pagato dall'Utente per il Servizio negli ultimi 12 mesi precedenti all'evento dannoso, o a €10 qualora non sia stato effettuato alcun pagamento.</p>
+      <p>Nulla in questi Termini esclude o limita la responsabilità del Fornitore per morte o lesioni personali causate da negligenza, per frode o per qualsiasi altra responsabilità che non possa essere esclusa per legge.</p>
+    </section>
+
+    <!-- ===== 12 ===== -->
+    <section>
+      <h2>12. Indennizzo</h2>
+      <p>L'Utente si impegna a manlevare e tenere indenne il Fornitore da qualsiasi pretesa, responsabilità, danno, costo o spesa (incluse le spese legali ragionevoli) derivanti da: (a) violazione di questi Termini da parte dell'Utente; (b) uso improprio o illecito del Servizio; (c) violazione di diritti di terzi da parte dell'Utente.</p>
+    </section>
+
+    <!-- ===== 13 ===== -->
+    <section>
+      <h2>13. Modifiche al Servizio e ai Termini</h2>
+      <p>Il Fornitore si riserva il diritto di:</p>
+      <ul>
+        <li>Modificare, aggiornare o interrompere funzionalità del Servizio in qualsiasi momento</li>
+        <li>Aggiornare i presenti Termini di Servizio</li>
+      </ul>
+      <p>In caso di modifiche <strong>sostanziali</strong> ai Termini, l'Utente sarà informato tramite notifica in-app o via email con ragionevole anticipo prima dell'entrata in vigore. L'uso continuato del Servizio dopo tale data costituisce accettazione dei nuovi Termini. Se l'Utente non accetta le modifiche, può eliminare il proprio account e cessare l'utilizzo del Servizio.</p>
+    </section>
+
+    <!-- ===== 14 ===== -->
+    <section>
+      <h2>14. Cessazione del Servizio e dell'Account</h2>
+
+      <h3>14.1 — Cancellazione da parte dell'Utente</h3>
+      <p>L'Utente può eliminare il proprio account in qualsiasi momento tramite <strong>Impostazioni → Zona Pericolosa → Elimina account</strong>. La cancellazione è irreversibile: tutti i dati personali vengono eliminati permanentemente entro 30 giorni.</p>
+
+      <h3>14.2 — Sospensione da parte del Fornitore</h3>
+      <p>Il Fornitore si riserva il diritto di sospendere o cancellare l'account dell'Utente in caso di violazione dei presenti Termini, senza obbligo di preavviso. In caso di sospensione ingiustificata, il Fornitore provvederà al rimborso proporzionale di eventuali abbonamenti prepagati.</p>
+
+      <h3>14.3 — Interruzione del Servizio</h3>
+      <p>Il Fornitore si riserva il diritto di interrompere definitivamente il Servizio, dandone comunicazione con almeno <strong>30 giorni</strong> di preavviso tramite l'App o via email. In tal caso, gli abbonamenti attivi saranno rimborsati in proporzione al periodo residuo, nei limiti delle politiche di Apple.</p>
+    </section>
+
+    <!-- ===== 15 ===== -->
+    <section>
+      <h2>15. Legge Applicabile e Foro Competente</h2>
+      <p>I presenti Termini di Servizio sono regolati dalla <strong>legge italiana</strong> e interpretati in conformità con essa, fatte salve le disposizioni inderogabili a tutela dei consumatori previste dalla normativa del Paese di residenza dell'Utente.</p>
+      <p>Per qualsiasi controversia derivante dall'interpretazione, dall'esecuzione o dalla validità dei presenti Termini, le parti tenteranno in primo luogo una risoluzione amichevole. In mancanza di accordo, il foro competente è quello di <strong>Napoli (Italia)</strong>, salvo diversa disposizione inderogabile di legge a tutela dell'Utente consumatore.</p>
+      <p>Per la risoluzione alternativa delle controversie, l'Utente può altresì rivolgersi alla piattaforma ODR (Online Dispute Resolution) della Commissione Europea: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+    </section>
+
+    <!-- ===== 16 ===== -->
+    <section>
+      <h2>16. Disposizioni Generali</h2>
+      <ul>
+        <li><strong>Interezza dell'accordo:</strong> I presenti Termini, unitamente alla Privacy Policy, costituiscono l'intero accordo tra le parti in merito all'oggetto e sostituiscono qualsiasi precedente accordo o comunicazione.</li>
+        <li><strong>Nullità parziale:</strong> Se una disposizione di questi Termini è ritenuta nulla o inapplicabile, le restanti disposizioni rimangono pienamente in vigore.</li>
+        <li><strong>Rinuncia:</strong> Il mancato esercizio di un diritto previsto da questi Termini non costituisce rinuncia a esercitarlo in futuro.</li>
+        <li><strong>Cessione:</strong> L'Utente non può cedere i propri diritti o obblighi derivanti da questi Termini senza il consenso scritto del Fornitore. Il Fornitore può cedere i propri diritti in caso di fusione, acquisizione o vendita dell'attività, previa comunicazione all'Utente.</li>
+      </ul>
+    </section>
+
+    <!-- ===== 17 ===== -->
+    <section>
+      <h2>17. Contatti</h2>
+      <p>Per domande, segnalazioni o richieste relative ai presenti Termini di Servizio:</p>
+      <div class="contact-box">
+        <p><strong>Alessio Rongione</strong></p>
+        <p>Email: <a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a></p>
+        <p style="margin-top:8px; font-size:13px; color:#6B7280;">Risposta garantita entro 30 giorni lavorativi dalla ricezione.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Calorino &nbsp;·&nbsp;
+      <a href="../privacy/">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="../terms/">Termini di Servizio</a>
+    </p>
+  </footer>
+
+</body>
+</html>
