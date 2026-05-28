@@ -58,16 +58,8 @@
       flex-shrink: 0;
     }
 
-    .header-app-name {
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--text);
-    }
-
-    .header-tagline {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+    .header-app-name { font-weight: 700; font-size: 17px; color: var(--text); }
+    .header-tagline { font-size: 12px; color: var(--text-muted); }
 
     main {
       max-width: 800px;
@@ -118,9 +110,7 @@
       line-height: 1.7;
     }
 
-    section {
-      margin-bottom: 44px;
-    }
+    section { margin-bottom: 44px; }
 
     h2 {
       font-size: 20px;
@@ -140,23 +130,12 @@
       letter-spacing: 0.4px;
     }
 
-    p {
-      margin-bottom: 12px;
-      color: #374151;
-    }
+    p { margin-bottom: 12px; color: #374151; }
+    p:last-child { margin-bottom: 0; }
 
-    ul, ol {
-      margin: 8px 0 14px 22px;
-    }
-
-    li {
-      margin-bottom: 7px;
-      color: #374151;
-    }
-
-    li strong {
-      color: var(--text);
-    }
+    ul, ol { margin: 8px 0 14px 22px; }
+    li { margin-bottom: 7px; color: #374151; }
+    li strong { color: var(--text); }
 
     .provider-card {
       background: var(--card);
@@ -173,14 +152,8 @@
       margin-bottom: 8px;
     }
 
-    .provider-card p {
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .provider-card a {
-      font-size: 13px;
-    }
+    .provider-card p { font-size: 14px; margin-bottom: 5px; }
+    .provider-card a { font-size: 13px; }
 
     .rights-grid {
       display: grid;
@@ -217,18 +190,20 @@
       padding: 18px 20px;
     }
 
-    .contact-box p {
-      margin-bottom: 4px;
+    .contact-box p { margin-bottom: 4px; }
+
+    .local-box {
+      background: #F0FDF4;
+      border-left: 4px solid #16A34A;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 14px;
+      color: #14532D;
     }
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     footer {
       text-align: center;
@@ -239,14 +214,8 @@
       background: var(--card);
     }
 
-    footer a {
-      color: var(--text-muted);
-      margin: 0 8px;
-    }
-
-    footer a:hover {
-      color: var(--primary);
-    }
+    footer a { color: var(--text-muted); margin: 0 8px; }
+    footer a:hover { color: var(--primary); }
 
     @media (max-width: 600px) {
       .doc-header h1 { font-size: 26px; }
@@ -254,7 +223,6 @@
       .rights-grid { grid-template-columns: 1fr 1fr; }
       main { padding: 28px 18px 60px; }
     }
-
     @media (max-width: 400px) {
       .rights-grid { grid-template-columns: 1fr; }
     }
@@ -277,7 +245,7 @@
       <h1>Privacy Policy</h1>
       <div class="doc-meta">
         <span class="badge">GDPR Compliant</span>
-        Ultimo aggiornamento: 28 maggio 2026 &nbsp;·&nbsp; Versione 1.0
+        Ultimo aggiornamento: 28 maggio 2026 &nbsp;·&nbsp; Versione 1.1
       </div>
     </div>
 
@@ -291,6 +259,7 @@
       <p>Il titolare del trattamento dei dati personali raccolti tramite Calorino è:</p>
       <div class="contact-box">
         <p><strong>Alessio Rongione</strong></p>
+        <p>Monterotondo (RM), Italia</p>
         <p>Email: <a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a></p>
       </div>
       <p style="margin-top:12px;">Per qualsiasi richiesta inerente al trattamento dei tuoi dati personali puoi contattarci all'indirizzo email indicato sopra.</p>
@@ -301,117 +270,186 @@
       <h2>2. Dati Personali Raccolti</h2>
 
       <h3>2.1 — Dati di Account</h3>
-      <p>Quando crei un account su Calorino raccogliamo:</p>
+      <p>Quando crei un account raccogliamo:</p>
       <ul>
         <li><strong>Nome e cognome</strong></li>
         <li><strong>Indirizzo email</strong></li>
         <li><strong>Password</strong> — conservata esclusivamente in forma cifrata (hash) tramite Supabase Auth; non abbiamo mai accesso alla password in chiaro</li>
-        <li>Se utilizzi <strong>Google Sign-In</strong> o <strong>Sign in with Apple</strong>: nome ed email forniti da tali servizi di terze parti</li>
+        <li>Se utilizzi <strong>Google Sign-In</strong> o <strong>Sign in with Apple</strong>: nome ed email forniti da tali servizi</li>
       </ul>
 
       <h3>2.2 — Dati di Salute e Nutrizione</h3>
-      <p>Per fornirti il servizio di tracking nutrizionale raccogliamo:</p>
+      <p>Questi dati rientrano nella categoria dei <strong>dati relativi alla salute</strong> ai sensi dell'Art. 9 GDPR. Il loro trattamento avviene su tuo consenso esplicito (Art. 9(2)(a) GDPR).</p>
       <ul>
-        <li>Peso corporeo (inserito manualmente dall'utente)</li>
+        <li>Peso corporeo e storico delle misurazioni</li>
         <li>Obiettivi calorici e macro-nutrienti giornalieri (calorie, proteine, carboidrati, grassi)</li>
         <li>Pasti registrati con relativi alimenti, porzioni e valori nutrizionali</li>
-        <li>Diete personalizzate e piani alimentari</li>
-        <li>Dati di aderenza alla dieta, streak e progressi nel tempo</li>
-        <li>Consumo di acqua giornaliero (se utilizzi la funzione promemoria idratazione)</li>
+        <li>Diete personalizzate e piani alimentari importati</li>
+        <li>Dati di aderenza alla dieta, streak giornaliero e progressi nel tempo</li>
+        <li>Consumo di acqua giornaliero (se utilizzi i promemoria idratazione)</li>
+        <li>Contatori di utilizzo AI giornaliero (numero di chiamate effettuate)</li>
+        <li>Cronologia degli accessi a funzionalità sbloccate tramite pubblicità</li>
       </ul>
-      <p>Questi dati rientrano nella categoria dei <strong>dati relativi alla salute</strong> ai sensi dell'Art. 9 GDPR. Il loro trattamento avviene esclusivamente su tuo consenso esplicito (Art. 9(2)(a) GDPR).</p>
 
-      <h3>2.3 — Immagini dei Pasti</h3>
-      <p>Se utilizzi la funzione di analisi fotografica, l'immagine del pasto viene inviata in modo sicuro ai server di <strong>Google (Gemini AI)</strong> per il riconoscimento degli alimenti e il calcolo dei valori nutrizionali. <strong>Le immagini non vengono conservate permanentemente sui nostri server</strong> una volta completata l'analisi. Google tratta le immagini secondo la propria Privacy Policy.</p>
+      <h3>2.3 — Immagini dei Pasti e delle Diete</h3>
+      <p>Se utilizzi la fotocamera per analizzare un pasto o importare una dieta, l'immagine viene inviata in modo sicuro ai server di Supabase (Edge Functions) che la inoltrano a <strong>Google Gemini AI</strong> per il riconoscimento degli alimenti o per l'estrazione dei dati dietetici. <strong>Le immagini non vengono conservate permanentemente</strong> una volta completata l'analisi.</p>
+      <p>La fotocamera è utilizzata anche per la <strong>scansione di codici a barre</strong> (vedi sezione 2.5): in questo caso non viene salvata alcuna immagine, viene letto solo il codice numerico.</p>
 
-      <h3>2.4 — Dati Tecnici e di Utilizzo</h3>
-      <p>Raccogliamo automaticamente alcune informazioni tecniche necessarie al corretto funzionamento dell'app:</p>
+      <h3>2.4 — Dati Vocali</h3>
+      <p>Se utilizzi la funzione di <strong>input vocale</strong> per descrivere un pasto, il tuo audio viene elaborato tramite il servizio di riconoscimento vocale del sistema operativo (<strong>Apple SFSpeechRecognizer</strong> su iOS), che può trasmettere l'audio ai server Apple per la trascrizione. Il testo trascritto viene poi inviato a Gemini AI tramite le Supabase Edge Functions per il calcolo dei valori nutrizionali.</p>
+      <p>L'utilizzo della funzione vocale richiede il consenso all'accesso al <strong>microfono</strong> e al servizio di <strong>riconoscimento vocale</strong> del dispositivo. Puoi revocare questi permessi in qualsiasi momento da <em>Impostazioni → Privacy e sicurezza → Microfono / Riconoscimento vocale</em>.</p>
+
+      <h3>2.5 — Dati di Scansione Codici a Barre</h3>
+      <p>Quando scansioni un codice a barre, il numero EAN/UPC del prodotto viene inviato in sequenza a uno o più dei seguenti servizi esterni per recuperare le informazioni nutrizionali del prodotto:</p>
       <ul>
-        <li>Date e orari di accesso</li>
-        <li>Preferenze dell'app (tema grafico, notifiche attive)</li>
-        <li>Log di errori tecnici e crash anonimi</li>
+        <li><strong>Open Food Facts</strong> (database aperto di prodotti alimentari)</li>
+        <li><strong>UPCitemdb</strong> (database prodotti commerciali, fallback)</li>
+        <li><strong>Google Gemini AI</strong> tramite Supabase Edge Functions (stima nutrizionale, secondo fallback)</li>
+      </ul>
+      <p>I risultati delle scansioni recenti sono memorizzati in una <strong>cache locale cifrata</strong> sul dispositivo (massimo 50 prodotti) per evitare chiamate ripetute alla rete.</p>
+
+      <h3>2.6 — Dati Tecnici e di Utilizzo</h3>
+      <ul>
+        <li>Date e orari di accesso e utilizzo</li>
+        <li>Preferenze dell'app (tema grafico, stato notifiche)</li>
+        <li><strong>Log di errori e crash</strong>: in caso di crash dell'app, Firebase Crashlytics raccoglie automaticamente informazioni tecniche (modello dispositivo, versione iOS, versione app, stack trace dell'errore) per consentirci di individuare e correggere i bug. I dati sono anonimi e non contengono informazioni personali identificabili.</li>
       </ul>
 
-      <h3>2.5 — Dati Pubblicitari</h3>
-      <p>Nella versione gratuita dell'app vengono visualizzati annunci tramite <strong>Google AdMob</strong>. AdMob può raccogliere un identificatore pubblicitario anonimizzato del dispositivo (<em>IDFA</em> su iOS) per mostrare annunci pertinenti. Puoi limitare o disattivare questo tracciamento nelle impostazioni del tuo dispositivo (Impostazioni → Privacy e sicurezza → Pubblicità Apple).</p>
+      <h3>2.7 — Dati Pubblicitari</h3>
+      <p>Nella versione gratuita vengono mostrati due tipi di annunci tramite <strong>Google AdMob</strong>:</p>
+      <ul>
+        <li><strong>Banner pubblicitari</strong>: visualizzati nella parte inferiore di alcune schermate</li>
+        <li><strong>Annunci con premio (Rewarded Ads)</strong>: video pubblicitari opzionali che l'utente può scegliere di guardare per ottenere chiamate AI aggiuntive o sbloccare temporaneamente funzionalità avanzate (streak recovery, report estesi)</li>
+      </ul>
+      <p>AdMob può raccogliere un identificatore pubblicitario del dispositivo (<em>IDFA</em> su iOS) per mostrare annunci pertinenti. Puoi gestire le preferenze pubblicitarie da <em>Impostazioni → Privacy e sicurezza → Pubblicità Apple</em>.</p>
+
+      <h3>2.8 — Dati Conservati Localmente sul Dispositivo</h3>
+      <p>Parte dei tuoi dati viene conservata direttamente sul dispositivo, al di fuori dei server Supabase:</p>
+      <ul>
+        <li><strong>Database SQLite offline</strong>: i pasti registrati in assenza di connessione internet vengono salvati localmente e sincronizzati con Supabase non appena la connessione è ripristinata</li>
+        <li><strong>iOS Keychain (archiviazione sicura)</strong>: obiettivo calorico, target macro-nutrienti, valore dello streak giornaliero e dati di cache del peso sono conservati nel Keychain cifrato di iOS. Questi dati <strong>sopravvivono alla disinstallazione dell'app</strong> e vengono eliminati solo all'eliminazione dell'account o su richiesta esplicita</li>
+        <li><strong>Cache barcode</strong>: ultimi 50 prodotti scansionati (vedi sezione 2.5), conservati in SharedPreferences cifrate</li>
+        <li><strong>Preferenze app</strong>: impostazioni notifiche, tema e preferenze UI, in SharedPreferences locali</li>
+      </ul>
     </section>
 
     <!-- ===== 3 ===== -->
     <section>
       <h2>3. Finalità e Base Giuridica del Trattamento</h2>
       <ul>
-        <li>
-          <strong>Fornitura del servizio</strong> — Art. 6(1)(b) GDPR (esecuzione del contratto): gestione dell'account, calcolo dei macro-nutrienti, salvataggio dei pasti, tracking del peso e aderenza alla dieta.
-        </li>
-        <li>
-          <strong>Analisi nutrizionale tramite AI</strong> — Art. 6(1)(a) e Art. 9(2)(a) GDPR (consenso): elaborazione delle immagini dei pasti tramite Gemini AI di Google, attivabile solo su richiesta esplicita dell'utente.
-        </li>
-        <li>
-          <strong>Comunicazioni di servizio</strong> — Art. 6(1)(b) GDPR: email di conferma account, reset password, notifiche push relative al servizio (promemoria idratazione).
-        </li>
-        <li>
-          <strong>Sicurezza e prevenzione delle frodi</strong> — Art. 6(1)(f) GDPR (legittimo interesse): monitoraggio di accessi anomali e protezione dell'integrità del servizio.
-        </li>
-        <li>
-          <strong>Miglioramento del servizio</strong> — Art. 6(1)(f) GDPR (legittimo interesse): analisi aggregata e anonimizzata delle funzionalità utilizzate.
-        </li>
-        <li>
-          <strong>Pubblicità</strong> — Art. 6(1)(a) GDPR (consenso): visualizzazione di annunci tramite AdMob nella versione gratuita, soggetta alle preferenze pubblicitarie del dispositivo.
-        </li>
+        <li><strong>Fornitura del servizio</strong> — Art. 6(1)(b) GDPR (esecuzione del contratto): gestione account, calcolo nutrienti, salvataggio pasti, tracking peso e aderenza alla dieta.</li>
+        <li><strong>Dati di salute</strong> — Art. 9(2)(a) GDPR (consenso esplicito): trattamento di dati relativi alla salute (peso, obiettivi nutrizionali, pasti) espressamente forniti dall'utente per ottenere il servizio di tracking.</li>
+        <li><strong>Analisi AI (testo, voce, immagine)</strong> — Art. 6(1)(a) e 9(2)(a) GDPR (consenso): elaborazione di testi, trascrizioni vocali e immagini tramite Gemini AI di Google, attivata su richiesta esplicita dell'utente per ciascuna analisi.</li>
+        <li><strong>Comunicazioni di servizio</strong> — Art. 6(1)(b) GDPR: email di conferma account, reset password, notifiche push di promemoria idratazione.</li>
+        <li><strong>Diagnostica e stabilità</strong> — Art. 6(1)(f) GDPR (legittimo interesse): raccolta anonima di crash report tramite Firebase Crashlytics per garantire il corretto funzionamento dell'app.</li>
+        <li><strong>Sicurezza</strong> — Art. 6(1)(f) GDPR (legittimo interesse): monitoraggio di accessi anomali e protezione dell'integrità del servizio.</li>
+        <li><strong>Pubblicità</strong> — Art. 6(1)(a) GDPR (consenso): visualizzazione di annunci tramite AdMob nella versione gratuita, soggetta alle preferenze ATT del dispositivo.</li>
       </ul>
     </section>
 
     <!-- ===== 4 ===== -->
     <section>
       <h2>4. Fornitori di Servizi Terzi (Sub-Responsabili del Trattamento)</h2>
-      <p>Per erogare Calorino ci avvaliamo dei seguenti fornitori. Ciascuno tratta i dati secondo accordi di trattamento conformi al GDPR:</p>
+      <p>Per erogare Calorino ci avvaliamo dei seguenti fornitori esterni. Ciascuno tratta i dati secondo accordi conformi al GDPR:</p>
 
       <div class="provider-card">
         <div class="provider-name">Supabase, Inc.</div>
-        <p><strong>Ruolo:</strong> Infrastruttura cloud, database e autenticazione</p>
-        <p><strong>Dati trattati:</strong> Account (email, nome, password cifrata), profilo nutrizionale, pasti registrati, peso, preferenze</p>
-        <p><strong>Sede legale:</strong> USA — trasferimento dati con Standard Contractual Clauses (SCC, Art. 46 GDPR)</p>
+        <p><strong>Ruolo:</strong> Infrastruttura cloud principale — database, autenticazione, Edge Functions (intermediario per le chiamate a Gemini AI)</p>
+        <p><strong>Dati trattati:</strong> Account, profilo nutrizionale, pasti, peso, diete, quote AI, accessi rewarded, preferenze</p>
+        <p><strong>Nota:</strong> Le Edge Functions di Supabase fungono da proxy sicuro verso Google Gemini AI: i tuoi dati (testo, immagini) passano attraverso l'infrastruttura Supabase prima di raggiungere Google</p>
+        <p><strong>Sede:</strong> USA — trasferimento con Standard Contractual Clauses (SCC, Art. 46 GDPR)</p>
         <p><strong>Privacy Policy:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></p>
       </div>
 
       <div class="provider-card">
-        <div class="provider-name">Google LLC</div>
-        <p><strong>Ruolo (a):</strong> Gemini AI — analisi nutrizionale delle immagini dei pasti</p>
-        <p><strong>Ruolo (b):</strong> Google Sign-In — autenticazione tramite account Google</p>
-        <p><strong>Ruolo (c):</strong> AdMob — erogazione di annunci pubblicitari nella versione gratuita</p>
-        <p><strong>Dati trattati:</strong> (a) Immagini dei pasti; (b) Email e nome Google; (c) Identificatori pubblicitari anonimi</p>
-        <p><strong>Sede legale:</strong> USA — trasferimento dati con Standard Contractual Clauses (SCC)</p>
+        <div class="provider-name">Google LLC — Gemini AI</div>
+        <p><strong>Ruolo:</strong> Motore di intelligenza artificiale per il calcolo dei valori nutrizionali da testo, voce e immagini</p>
+        <p><strong>Dati trattati:</strong> Testo descrittivo degli alimenti, trascrizioni vocali dei pasti, immagini dei pasti e delle diete (ricevuti tramite Supabase Edge Functions)</p>
+        <p><strong>Sede:</strong> USA — trasferimento con Standard Contractual Clauses (SCC)</p>
         <p><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
       </div>
 
       <div class="provider-card">
-        <div class="provider-name">Apple Inc.</div>
+        <div class="provider-name">Google LLC — Firebase Crashlytics</div>
+        <p><strong>Ruolo:</strong> Raccolta automatica di crash report e log di errori per la diagnostica dell'app</p>
+        <p><strong>Dati trattati:</strong> Modello del dispositivo, versione iOS, versione dell'app Calorino, stack trace degli errori, timestamp degli eventi. I dati sono anonimi e non includono dati personali dell'utente</p>
+        <p><strong>Conservazione:</strong> 90 giorni sui server Firebase</p>
+        <p><strong>Sede:</strong> USA — trasferimento con Standard Contractual Clauses (SCC)</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></p>
+      </div>
+
+      <div class="provider-card">
+        <div class="provider-name">Google LLC — AdMob</div>
+        <p><strong>Ruolo:</strong> Erogazione di annunci pubblicitari banner e rewarded nella versione gratuita</p>
+        <p><strong>Dati trattati:</strong> Identificatore pubblicitario del dispositivo (IDFA, anonimizzato), dati di interazione con gli annunci</p>
+        <p><strong>Sede:</strong> USA — trasferimento con Standard Contractual Clauses (SCC)</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="provider-card">
+        <div class="provider-name">Google LLC — Google Sign-In</div>
+        <p><strong>Ruolo:</strong> Autenticazione tramite account Google</p>
+        <p><strong>Dati trattati:</strong> Email e nome forniti dall'account Google</p>
+        <p><strong>Sede:</strong> USA — trasferimento con Standard Contractual Clauses (SCC)</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="provider-card">
+        <div class="provider-name">Apple Inc. — Sign in with Apple &amp; Speech Recognition</div>
         <p><strong>Ruolo (a):</strong> Sign in with Apple — autenticazione tramite Apple ID</p>
-        <p><strong>Ruolo (b):</strong> App Store — distribuzione dell'app e gestione degli acquisti in-app</p>
-        <p><strong>Dati trattati:</strong> (a) Email (può essere anonimizzata da Apple su scelta dell'utente) e nome; (b) Dati di acquisto gestiti direttamente da Apple</p>
-        <p><strong>Sede legale:</strong> USA — trasferimento dati con Standard Contractual Clauses (SCC)</p>
+        <p><strong>Ruolo (b):</strong> SFSpeechRecognizer — riconoscimento vocale per l'input dei pasti (può avvenire su server Apple)</p>
+        <p><strong>Ruolo (c):</strong> App Store — distribuzione e gestione acquisti in-app</p>
+        <p><strong>Dati trattati:</strong> (a) Email (opzionalmente anonimizzata) e nome; (b) Audio per trascrizione vocale; (c) Dati di acquisto</p>
+        <p><strong>Sede:</strong> USA — trasferimento con Standard Contractual Clauses (SCC)</p>
         <p><strong>Privacy Policy:</strong> <a href="https://www.apple.com/legal/privacy/it/" target="_blank" rel="noopener">apple.com/legal/privacy</a></p>
+      </div>
+
+      <div class="provider-card">
+        <div class="provider-name">Open Food Facts</div>
+        <p><strong>Ruolo:</strong> Database aperto di prodotti alimentari — primo servizio di lookup per i codici a barre</p>
+        <p><strong>Dati trattati:</strong> Codice a barre (EAN/UPC) scansionato dall'utente; nessun dato personale viene inviato</p>
+        <p><strong>Sede:</strong> Francia (UE) — nessun trasferimento extra-UE</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">world.openfoodfacts.org/privacy</a></p>
+      </div>
+
+      <div class="provider-card">
+        <div class="provider-name">UPCitemdb</div>
+        <p><strong>Ruolo:</strong> Database prodotti commerciali — secondo servizio di lookup barcode (usato solo se Open Food Facts non trova il prodotto)</p>
+        <p><strong>Dati trattati:</strong> Codice a barre (EAN/UPC); nessun dato personale viene inviato</p>
+        <p><strong>Sede:</strong> USA — trasferimento con garanzie adeguate</p>
+        <p><strong>Privacy Policy:</strong> <a href="https://www.upcitemdb.com/privacy" target="_blank" rel="noopener">upcitemdb.com/privacy</a></p>
       </div>
     </section>
 
     <!-- ===== 5 ===== -->
     <section>
       <h2>5. Trasferimento dei Dati verso Paesi Terzi</h2>
-      <p>I fornitori indicati nella sezione precedente (Supabase, Google, Apple) hanno sede negli <strong>Stati Uniti d'America</strong>. Il trasferimento dei dati personali verso tali Paesi avviene nel rispetto delle garanzie adeguate previste dall'Art. 46 GDPR, specificatamente tramite l'adozione delle <strong>Clausole Contrattuali Standard (Standard Contractual Clauses — SCC)</strong> approvate dalla Commissione Europea, che garantiscono un livello di protezione equivalente a quello previsto nell'Unione Europea.</p>
+      <p>Diversi fornitori indicati nella sezione precedente hanno sede negli <strong>Stati Uniti d'America</strong> (Supabase, Google, Apple, UPCitemdb). Il trasferimento dei dati personali avviene nel rispetto dell'Art. 46 GDPR, tramite <strong>Clausole Contrattuali Standard (Standard Contractual Clauses — SCC)</strong> approvate dalla Commissione Europea, che garantiscono un livello di protezione equivalente a quello dell'Unione Europea.</p>
+      <p>Open Food Facts ha sede in Francia ed è soggetto direttamente al GDPR: non è richiesto alcun meccanismo di trasferimento aggiuntivo.</p>
     </section>
 
     <!-- ===== 6 ===== -->
     <section>
-      <h2>6. Periodo di Conservazione</h2>
-      <p>I dati personali sono conservati per l'intera durata dell'account attivo. Quando elimini il tuo account tramite <strong>Impostazioni → Zona Pericolosa → Elimina account</strong>, tutti i tuoi dati vengono cancellati in modo permanente entro <strong>30 giorni</strong> dalla richiesta.</p>
-      <p>Dati anonimi e aggregati (es. statistiche di utilizzo senza possibilità di identificazione) possono essere conservati a tempo indeterminato per finalità statistiche.</p>
-      <p>In presenza di obblighi legali specifici (es. adempimenti fiscali derivanti da abbonamenti premium), alcuni dati potranno essere conservati per i periodi previsti dalla normativa vigente.</p>
+      <h2>6. Conservazione dei Dati</h2>
+
+      <h3>6.1 — Dati sui server Supabase</h3>
+      <p>I dati dell'account e tutti i dati nutrizionali sono conservati per l'intera durata dell'account attivo. Quando elimini l'account (Impostazioni → Zona Pericolosa → Elimina account), tutti i dati vengono cancellati permanentemente entro <strong>30 giorni</strong>.</p>
+
+      <h3>6.2 — Dati locali sul dispositivo</h3>
+      <p>I dati conservati nel Keychain iOS sopravvivono alla disinstallazione dell'app. Per eliminarli completamente è necessario eliminare l'account prima di disinstallare, oppure contattarci per la cancellazione manuale.</p>
+      <p>Il database SQLite offline e la cache barcode vengono eliminati automaticamente alla disinstallazione dell'app.</p>
+
+      <h3>6.3 — Crash report (Firebase Crashlytics)</h3>
+      <p>I log di crash anonimi sono conservati per <strong>90 giorni</strong> sui server Firebase, dopodiché vengono eliminati automaticamente.</p>
+
+      <h3>6.4 — Obblighi legali</h3>
+      <p>In presenza di obblighi normativi specifici (es. adempimenti fiscali per abbonamenti premium), alcuni dati potranno essere conservati per i periodi previsti dalla legge applicabile.</p>
     </section>
 
     <!-- ===== 7 ===== -->
     <section>
       <h2>7. I Tuoi Diritti (GDPR)</h2>
-      <p>In qualità di interessato hai i seguenti diritti, esercitabili in qualsiasi momento contattandoci all'indirizzo indicato nella sezione 12:</p>
+      <p>In qualità di interessato hai i seguenti diritti, esercitabili contattandoci all'indirizzo indicato nella sezione 14:</p>
       <div class="rights-grid">
         <div class="right-item">
           <span class="right-title">Accesso (Art. 15)</span>
@@ -427,7 +465,7 @@
         </div>
         <div class="right-item">
           <span class="right-title">Limitazione (Art. 18)</span>
-          <span class="right-desc">Ottenere la limitazione del trattamento in determinati casi</span>
+          <span class="right-desc">Limitare il trattamento in determinati casi</span>
         </div>
         <div class="right-item">
           <span class="right-title">Portabilità (Art. 20)</span>
@@ -446,13 +484,13 @@
           <span class="right-desc">Presentare reclamo all'Autorità di controllo competente</span>
         </div>
       </div>
-      <p>Risponderemo alle tue richieste entro <strong>30 giorni</strong> dal ricevimento. In caso di richieste complesse, il termine può essere esteso di ulteriori 60 giorni, previa comunicazione.</p>
+      <p>Risponderemo entro <strong>30 giorni</strong> dal ricevimento. In caso di richieste complesse, il termine può essere esteso di ulteriori 60 giorni, previa comunicazione.</p>
     </section>
 
     <!-- ===== 8 ===== -->
     <section>
       <h2>8. Reclamo al Garante per la Protezione dei Dati Personali</h2>
-      <p>Hai il diritto di presentare reclamo all'autorità di controllo competente nel Paese in cui risiedi. Per gli utenti italiani l'autorità è:</p>
+      <p>Hai il diritto di presentare reclamo all'autorità di controllo competente. In Italia:</p>
       <div class="contact-box">
         <p><strong>Garante per la Protezione dei Dati Personali</strong></p>
         <p>Sito web: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a></p>
@@ -464,45 +502,57 @@
     <!-- ===== 9 ===== -->
     <section>
       <h2>9. Minori</h2>
-      <p>Calorino non è destinato a utenti di età inferiore ai <strong>16 anni</strong> (o all'età minima prevista dalla normativa del Paese di residenza, ove superiore). Non raccogliamo consapevolmente dati personali di minori al di sotto di tale soglia.</p>
-      <p>Se sei genitore o tutore legale e ritieni che tuo figlio abbia creato un account o ci abbia fornito dati personali, contattaci immediatamente all'indirizzo email indicato nella sezione 12 e provvederemo alla cancellazione.</p>
+      <p>Calorino non è destinato a utenti di età inferiore ai <strong>16 anni</strong>. Non raccogliamo consapevolmente dati di minori al di sotto di tale soglia. Se sei genitore o tutore e ritieni che tuo figlio abbia creato un account, contattaci immediatamente: provvederemo alla cancellazione.</p>
     </section>
 
     <!-- ===== 10 ===== -->
     <section>
-      <h2>10. Cookie e Tecnologie di Tracciamento</h2>
-      <p>Calorino è un'applicazione mobile nativa e <strong>non utilizza cookie di navigazione</strong>. La persistenza della sessione è gestita tramite token sicuri di Supabase Auth.</p>
-      <p>Nella versione gratuita, Google AdMob può utilizzare l'<strong>IDFA</strong> (Identifier for Advertisers) del tuo dispositivo iOS per mostrare annunci pertinenti. In conformità con App Tracking Transparency (ATT) di Apple, all'avvio dell'app ti verrà chiesto il consenso per tale tracciamento. Puoi modificare la tua scelta in qualsiasi momento da: <em>Impostazioni → Privacy e sicurezza → Pubblicità Apple</em>.</p>
+      <h2>10. Permessi del Dispositivo Richiesti</h2>
+      <p>Calorino richiede i seguenti permessi di sistema iOS, con le relative finalità:</p>
+      <ul>
+        <li><strong>Fotocamera</strong>: scatto di foto per analisi nutrizionale di pasti e import diete tramite AI; scansione di codici a barre di prodotti alimentari</li>
+        <li><strong>Galleria foto (lettura)</strong>: selezione di immagini esistenti per l'analisi nutrizionale o l'import di diete</li>
+        <li><strong>Microfono</strong>: registrazione audio per l'input vocale dei pasti</li>
+        <li><strong>Riconoscimento vocale</strong>: trascrizione dell'audio in testo tramite il servizio Apple SFSpeechRecognizer</li>
+        <li><strong>Notifiche</strong>: invio di promemoria locali per l'idratazione giornaliera</li>
+        <li><strong>Accesso ai file</strong>: apertura di file PDF e DOCX dal dispositivo per l'import di piani alimentari</li>
+        <li><strong>Tracciamento pubblicità (ATT)</strong>: utilizzo dell'IDFA per annunci personalizzati tramite AdMob (solo con consenso esplicito tramite il prompt ATT di Apple)</li>
+      </ul>
+      <p>Puoi revocare qualsiasi permesso in qualsiasi momento da <em>Impostazioni → Calorino</em> sul tuo dispositivo iOS.</p>
     </section>
 
     <!-- ===== 11 ===== -->
     <section>
-      <h2>11. Sicurezza dei Dati</h2>
-      <p>Adottiamo misure tecniche e organizzative adeguate per proteggere i tuoi dati personali da accessi non autorizzati, perdita, divulgazione o alterazione:</p>
-      <ul>
-        <li>Comunicazioni cifrate tramite <strong>TLS/HTTPS</strong></li>
-        <li>Password conservate esclusivamente in forma di <strong>hash crittografico</strong></li>
-        <li>Accesso ai dati limitato al personale strettamente necessario (principio del minimo privilegio)</li>
-        <li>Infrastruttura gestita da Supabase con standard di sicurezza SOC 2 Type 2</li>
-      </ul>
-      <p>Nessun sistema di trasmissione dati su internet è tuttavia garantito al 100%. In caso di violazione dei dati che ponga a rischio i tuoi diritti, ti notificheremo tempestivamente nei modi previsti dal GDPR.</p>
+      <h2>11. Cookie e Tecnologie di Tracciamento</h2>
+      <p>Calorino è un'app mobile nativa e <strong>non utilizza cookie</strong>. La sessione è gestita tramite token cifrati di Supabase Auth. Nella versione gratuita, AdMob può utilizzare l'IDFA del dispositivo per annunci personalizzati, soggetto al consenso ATT.</p>
     </section>
 
     <!-- ===== 12 ===== -->
     <section>
-      <h2>12. Modifiche alla Privacy Policy</h2>
-      <p>Ci riserviamo il diritto di aggiornare questa Privacy Policy in qualsiasi momento. In caso di modifiche <strong>sostanziali</strong> ti informeremo tramite una notifica in-app o via email prima dell'entrata in vigore delle modifiche. La data dell'ultimo aggiornamento è sempre indicata in cima a questo documento.</p>
-      <p>L'uso continuato dell'app dopo la pubblicazione delle modifiche costituisce accettazione della nuova informativa. Se non accetti le modifiche, puoi eliminare il tuo account e cessare l'utilizzo del servizio.</p>
+      <h2>12. Sicurezza dei Dati</h2>
+      <ul>
+        <li>Tutte le comunicazioni avvengono tramite <strong>TLS/HTTPS</strong></li>
+        <li>Le password sono conservate esclusivamente come <strong>hash crittografico</strong></li>
+        <li>I dati sensibili locali (obiettivi, streak) sono conservati nel <strong>Keychain cifrato iOS</strong></li>
+        <li>Le chiavi API (Gemini, Supabase) non sono mai esposte nel codice dell'app: le chiamate AI passano attraverso <strong>Supabase Edge Functions</strong> che fungono da proxy sicuro</li>
+        <li>L'infrastruttura Supabase è certificata <strong>SOC 2 Type 2</strong></li>
+      </ul>
+      <p>In caso di violazione dei dati che ponga a rischio i tuoi diritti, ti notificheremo tempestivamente nei modi previsti dal GDPR (entro 72 ore alle autorità, senza ingiustificato ritardo agli interessati).</p>
     </section>
 
     <!-- ===== 13 ===== -->
     <section>
-      <h2>13. Contatti</h2>
-      <p>Per qualsiasi domanda, richiesta di esercizio dei diritti o segnalazione relativa al trattamento dei tuoi dati personali:</p>
+      <h2>13. Modifiche alla Privacy Policy</h2>
+      <p>In caso di modifiche <strong>sostanziali</strong>, ti informeremo tramite notifica in-app o via email prima dell'entrata in vigore. La data dell'ultimo aggiornamento è sempre indicata in cima al documento. L'uso continuato dell'app dopo le modifiche costituisce accettazione della nuova informativa.</p>
+    </section>
+
+    <!-- ===== 14 ===== -->
+    <section>
+      <h2>14. Contatti</h2>
       <div class="contact-box">
         <p><strong>Alessio Rongione — Titolare del Trattamento</strong></p>
         <p>Email: <a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a></p>
-        <p style="margin-top:8px; font-size:13px; color:#6B7280;">Risposta garantita entro 30 giorni dalla ricezione della richiesta.</p>
+        <p style="margin-top:8px; font-size:13px; color:#6B7280;">Risposta garantita entro 30 giorni dalla ricezione.</p>
       </div>
     </section>
   </main>

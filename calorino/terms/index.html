@@ -61,16 +61,8 @@
       flex-shrink: 0;
     }
 
-    .header-app-name {
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--text);
-    }
-
-    .header-tagline {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+    .header-app-name { font-weight: 700; font-size: 17px; color: var(--text); }
+    .header-tagline { font-size: 12px; color: var(--text-muted); }
 
     main {
       max-width: 800px;
@@ -130,27 +122,17 @@
       margin-bottom: 40px;
     }
 
-    .warning-box .warning-title {
+    .warning-title {
       font-weight: 700;
       font-size: 15px;
       color: var(--warning-text);
       margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
-    .warning-box p {
-      font-size: 14px;
-      color: #78350F;
-      margin-bottom: 6px;
-    }
-
+    .warning-box p { font-size: 14px; color: #78350F; margin-bottom: 6px; }
     .warning-box p:last-child { margin-bottom: 0; }
 
-    section {
-      margin-bottom: 44px;
-    }
+    section { margin-bottom: 44px; }
 
     h2 {
       font-size: 20px;
@@ -170,31 +152,61 @@
       letter-spacing: 0.4px;
     }
 
-    p {
-      margin-bottom: 12px;
-      color: #374151;
+    p { margin-bottom: 12px; color: #374151; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol { margin: 8px 0 14px 22px; }
+    li { margin-bottom: 7px; color: #374151; }
+    li strong { color: var(--text); }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
     }
 
-    ul, ol {
-      margin: 8px 0 14px 22px;
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
     }
 
-    li {
-      margin-bottom: 7px;
-      color: #374151;
+    .feature-card strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-size: 14px;
     }
 
-    li strong {
-      color: var(--text);
+    .feature-card span {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
-    .highlight-box {
+    .quota-box {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 18px 20px;
       margin: 16px 0;
     }
+
+    .quota-box .quota-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .quota-box .quota-row:last-child { border-bottom: none; }
+
+    .quota-box .quota-label { color: var(--text-muted); min-width: 180px; }
+    .quota-box .quota-value { font-weight: 600; color: var(--text); }
 
     .contact-box {
       background: var(--card);
@@ -203,18 +215,10 @@
       padding: 18px 20px;
     }
 
-    .contact-box p {
-      margin-bottom: 4px;
-    }
+    .contact-box p { margin-bottom: 4px; }
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     footer {
       text-align: center;
@@ -225,19 +229,17 @@
       background: var(--card);
     }
 
-    footer a {
-      color: var(--text-muted);
-      margin: 0 8px;
-    }
-
-    footer a:hover {
-      color: var(--primary);
-    }
+    footer a { color: var(--text-muted); margin: 0 8px; }
+    footer a:hover { color: var(--primary); }
 
     @media (max-width: 600px) {
       .doc-header h1 { font-size: 26px; }
       h2 { font-size: 18px; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
       main { padding: 28px 18px 60px; }
+    }
+    @media (max-width: 400px) {
+      .feature-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -258,7 +260,7 @@
       <h1>Termini di Servizio</h1>
       <div class="doc-meta">
         <span class="badge">App Store Compliant</span>
-        Ultimo aggiornamento: 28 maggio 2026 &nbsp;·&nbsp; Versione 1.0
+        Ultimo aggiornamento: 28 maggio 2026 &nbsp;·&nbsp; Versione 1.1
       </div>
     </div>
 
@@ -266,215 +268,292 @@
       Benvenuto in <strong>Calorino</strong>. Leggendo e accettando questi Termini di Servizio dichiari di aver compreso e accettato le condizioni d'uso dell'applicazione. Ti invitiamo a leggerli attentamente prima di utilizzare il servizio.
     </div>
 
-    <!-- AVVISO MEDICO PROMINENTE -->
+    <!-- AVVISO MEDICO -->
     <div class="warning-box">
-      <div class="warning-title">
-        ⚠️ Avviso Medico Importante
-      </div>
+      <div class="warning-title">⚠️ Avviso Medico Importante</div>
       <p><strong>Calorino è uno strumento di supporto al benessere personale, non uno strumento medico.</strong> Le informazioni, i calcoli nutrizionali e i suggerimenti forniti dall'app non costituiscono consulenza medica, nutrizionale o dietologica professionale e non devono essere interpretati come tali.</p>
-      <p>Prima di intraprendere qualsiasi programma alimentare, modificare la tua dieta in modo significativo o utilizzare i dati dell'app per gestire condizioni di salute (diabete, disturbi alimentari, malattie metaboliche, ecc.), <strong>consulta un medico, un nutrizionista o un dietologo abilitato</strong>.</p>
+      <p>Prima di intraprendere qualsiasi programma alimentare, modificare significativamente la tua dieta o utilizzare i dati dell'app per gestire condizioni di salute (diabete, disturbi alimentari, malattie metaboliche, patologie renali, ecc.), <strong>consulta un medico, un nutrizionista o un dietologo abilitato</strong>.</p>
       <p>L'autore di Calorino declina ogni responsabilità per decisioni prese esclusivamente sulla base delle informazioni fornite dall'applicazione.</p>
     </div>
 
     <!-- ===== 1 ===== -->
     <section>
       <h2>1. Accettazione dei Termini</h2>
-      <p>Utilizzando l'applicazione mobile Calorino (di seguito "il Servizio" o "l'App"), disponibile su Apple App Store, dichiari di:</p>
+      <p>Utilizzando Calorino dichiari di:</p>
       <ul>
-        <li>Avere almeno <strong>16 anni</strong> di età (o l'età minima richiesta dalla normativa del tuo Paese per il consenso al trattamento dei dati personali, ove superiore)</li>
+        <li>Avere almeno <strong>16 anni</strong> di età</li>
         <li>Aver letto, compreso e accettato integralmente questi Termini di Servizio</li>
         <li>Aver letto e accettato la nostra <a href="../privacy/">Privacy Policy</a></li>
       </ul>
-      <p>Se non accetti questi termini, non sei autorizzato a utilizzare il Servizio.</p>
-      <p>I presenti Termini costituiscono un accordo vincolante tra te ("Utente") e <strong>Alessio Rongione</strong> ("Fornitore", "noi"), titolare e sviluppatore dell'applicazione.</p>
+      <p>Se non accetti questi termini, non sei autorizzato a utilizzare il Servizio. I presenti Termini costituiscono un accordo vincolante tra te ("Utente") e <strong>Alessio Rongione</strong> ("Fornitore"), sviluppatore e titolare dell'applicazione.</p>
     </section>
 
     <!-- ===== 2 ===== -->
     <section>
       <h2>2. Descrizione del Servizio</h2>
-      <p>Calorino è un'applicazione mobile per iOS che permette di:</p>
-      <ul>
-        <li>Registrare pasti e alimenti con i relativi valori nutrizionali (calorie, proteine, carboidrati, grassi, fibre)</li>
-        <li>Calcolare automaticamente i valori nutrizionali tramite intelligenza artificiale (Google Gemini AI) partendo dalla descrizione testuale o da immagini dei pasti</li>
-        <li>Monitorare il peso corporeo nel tempo</li>
-        <li>Impostare e verificare obiettivi calorici e macro-nutrienti giornalieri</li>
-        <li>Seguire diete personalizzate e monitorare l'aderenza</li>
-        <li>Gestire promemoria per l'idratazione giornaliera</li>
-        <li>Accedere a funzionalità avanzate tramite abbonamento Premium</li>
-      </ul>
-      <p>Il Servizio è disponibile in versione gratuita (con annunci pubblicitari) e in versione Premium (senza pubblicità e con funzionalità aggiuntive).</p>
+      <p>Calorino è un'applicazione mobile per iOS per il tracking nutrizionale. Offre le seguenti funzionalità principali:</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <strong>Diario alimentare</strong>
+          <span>Registrazione manuale di pasti con valori nutrizionali (calorie, proteine, carboidrati, grassi, fibre)</span>
+        </div>
+        <div class="feature-card">
+          <strong>Analisi AI testuale</strong>
+          <span>Calcolo automatico dei valori nutrizionali tramite descrizione testuale del pasto, elaborata da Gemini AI</span>
+        </div>
+        <div class="feature-card">
+          <strong>Analisi AI fotografica</strong>
+          <span>Stima nutrizionale da fotografia del piatto, elaborata da Gemini AI</span>
+        </div>
+        <div class="feature-card">
+          <strong>Input vocale</strong>
+          <span>Dettatura vocale del pasto tramite microfono, con trascrizione automatica e analisi AI</span>
+        </div>
+        <div class="feature-card">
+          <strong>Scanner barcode</strong>
+          <span>Scansione del codice a barre di prodotti confezionati con recupero automatico dei valori nutrizionali</span>
+        </div>
+        <div class="feature-card">
+          <strong>Import diete</strong>
+          <span>Importazione di piani alimentari da file PDF, DOCX, immagini o testo tramite analisi AI</span>
+        </div>
+        <div class="feature-card">
+          <strong>Tracking peso</strong>
+          <span>Registrazione e visualizzazione dello storico del peso corporeo nel tempo</span>
+        </div>
+        <div class="feature-card">
+          <strong>Aderenza alla dieta</strong>
+          <span>Monitoraggio del rispetto dei piani alimentari e streak giornaliero</span>
+        </div>
+        <div class="feature-card">
+          <strong>Obiettivi nutrizionali</strong>
+          <span>Impostazione di obiettivi calorici e macro-nutrienti giornalieri personalizzati</span>
+        </div>
+        <div class="feature-card">
+          <strong>Promemoria idratazione</strong>
+          <span>Notifiche locali configurabili per ricordare di bere acqua durante la giornata</span>
+        </div>
+        <div class="feature-card">
+          <strong>Modalità offline</strong>
+          <span>Registrazione dei pasti senza connessione internet, con sincronizzazione automatica al ripristino della rete</span>
+        </div>
+        <div class="feature-card">
+          <strong>Alimenti preferiti</strong>
+          <span>Salvataggio e riutilizzo rapido degli alimenti registrati più frequentemente</span>
+        </div>
+      </div>
+
+      <p>Il Servizio è disponibile in versione <strong>gratuita</strong> (con annunci pubblicitari e quota AI giornaliera limitata) e in versione <strong>Premium</strong> (senza pubblicità e con funzionalità aggiuntive).</p>
     </section>
 
     <!-- ===== 3 ===== -->
     <section>
-      <h2>3. Avviso sull'Accuratezza dei Dati Nutrizionali</h2>
-      <p>I valori nutrizionali visualizzati nell'app sono calcolati tramite intelligenza artificiale (Google Gemini AI) e da banche dati alimentari. Tali valori sono <strong>stime indicative</strong> e non sostituiscono le informazioni nutrizionali ufficiali riportate sulle etichette dei prodotti alimentari.</p>
-      <p>L'accuratezza dei calcoli dipende da fattori quali:</p>
+      <h2>3. Sistema di Quota AI e Annunci con Premio</h2>
+
+      <h3>3.1 — Quota giornaliera gratuita</h3>
+      <p>Le funzionalità che richiedono l'intelligenza artificiale (analisi testuale, analisi fotografica, input vocale, import diete, lookup barcode via AI) sono soggette a una <strong>quota giornaliera</strong> nella versione gratuita:</p>
+      <div class="quota-box">
+        <div class="quota-row">
+          <span class="quota-label">Chiamate AI gratuite al giorno</span>
+          <span class="quota-value">5</span>
+        </div>
+        <div class="quota-row">
+          <span class="quota-label">Chiamate bonus per annuncio visto</span>
+          <span class="quota-value">+5</span>
+        </div>
+        <div class="quota-row">
+          <span class="quota-label">Annunci con premio max al giorno</span>
+          <span class="quota-value">3 (max +15 bonus)</span>
+        </div>
+        <div class="quota-row">
+          <span class="quota-label">Reset quota</span>
+          <span class="quota-value">Ogni giorno a mezzanotte</span>
+        </div>
+      </div>
+      <p>Gli utenti Premium non sono soggetti a limiti di quota giornaliera.</p>
+
+      <h3>3.2 — Annunci con premio (Rewarded Ads)</h3>
+      <p>Gli utenti della versione gratuita possono scegliere volontariamente di guardare un breve video pubblicitario per ottenere:</p>
       <ul>
-        <li>La qualità e il dettaglio delle descrizioni inserite dall'utente</li>
-        <li>La qualità delle immagini fornite per l'analisi fotografica</li>
-        <li>Le variazioni naturali nella composizione degli alimenti</li>
-        <li>I limiti intrinseci dei modelli di intelligenza artificiale</li>
+        <li><strong>Quota AI aggiuntiva</strong>: +5 chiamate AI per la giornata corrente</li>
+        <li><strong>Streak recovery</strong>: ripristino temporaneo dello streak giornaliero perso (accesso valido 30 minuti)</li>
+        <li><strong>Report aderenza estesi</strong>: accesso temporaneo a statistiche di aderenza avanzate (accesso valido 30 minuti)</li>
+        <li><strong>Storico peso esteso</strong>: accesso temporaneo a tutto lo storico delle misurazioni del peso (accesso valido 30 minuti)</li>
       </ul>
-      <p>Il Fornitore non garantisce la precisione assoluta dei dati nutrizionali e declina qualsiasi responsabilità per decisioni prese esclusivamente sulla base di tali stime, in particolare per soggetti con condizioni mediche che richiedono un controllo preciso dell'apporto calorico o nutrizionale.</p>
+      <p>La visione degli annunci con premio è sempre <strong>volontaria</strong>. Il Fornitore non garantisce la disponibilità degli annunci in ogni momento o area geografica. I bonus quota e gli accessi temporanei non sono rimborsabili, trasferibili o cumulabili tra giorni diversi.</p>
     </section>
 
     <!-- ===== 4 ===== -->
     <section>
-      <h2>4. Registrazione e Sicurezza dell'Account</h2>
-      <p>Per utilizzare Calorino è necessario creare un account tramite:</p>
-      <ul>
-        <li>Email e password</li>
-        <li>Google Sign-In</li>
-        <li>Sign in with Apple</li>
-      </ul>
-      <p>L'Utente è responsabile di:</p>
-      <ul>
-        <li>Mantenere la <strong>riservatezza delle credenziali</strong> di accesso</li>
-        <li>Non condividere il proprio account con terze parti</li>
-        <li>Notificare immediatamente al Fornitore qualsiasi accesso non autorizzato al proprio account (<a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a>)</li>
-        <li>Fornire informazioni veritiere e aggiornate in fase di registrazione</li>
-      </ul>
-      <p>Il Fornitore non è responsabile di eventuali perdite o danni derivanti dall'uso non autorizzato dell'account da parte di terzi per cause imputabili all'Utente.</p>
+      <h2>4. Avviso sull'Accuratezza dei Dati Nutrizionali</h2>
+
+      <h3>4.1 — Valori calcolati da AI</h3>
+      <p>I valori nutrizionali calcolati tramite intelligenza artificiale (Gemini AI) sono <strong>stime indicative</strong> e non sostituiscono le informazioni nutrizionali ufficiali riportate sulle etichette dei prodotti. L'accuratezza dipende dalla qualità della descrizione o dell'immagine fornita e dai limiti intrinseci dei modelli AI.</p>
+
+      <h3>4.2 — Valori da scanner barcode</h3>
+      <p>I valori nutrizionali recuperati tramite scansione del codice a barre provengono da database di terze parti (<strong>Open Food Facts</strong> e <strong>UPCitemdb</strong>), mantenuti dalla rispettiva comunità o azienda. Il Fornitore non controlla né garantisce l'accuratezza, la completezza o l'aggiornamento di tali dati. In caso di discrepanza, fare sempre riferimento all'etichetta del prodotto.</p>
+
+      <h3>4.3 — Valori da import dieta</h3>
+      <p>I valori nutrizionali estratti da file PDF, DOCX o immagini di piani alimentari dipendono dalla qualità del documento originale e dall'interpretazione dell'AI. Il Fornitore non è responsabile di errori di estrazione derivanti da documenti illeggibili, formati non standard o contenuti ambigui.</p>
+
+      <p>Il Fornitore declina ogni responsabilità per decisioni alimentari o di salute prese esclusivamente sulla base dei dati forniti dall'app, in particolare per soggetti con condizioni che richiedono un controllo nutrizionale preciso.</p>
     </section>
 
     <!-- ===== 5 ===== -->
     <section>
-      <h2>5. Condotte Vietate</h2>
-      <p>Nell'utilizzo del Servizio è espressamente vietato:</p>
+      <h2>5. Registrazione e Sicurezza dell'Account</h2>
+      <p>Per utilizzare Calorino è necessario creare un account tramite email/password, Google Sign-In o Sign in with Apple. L'Utente è responsabile di:</p>
       <ul>
-        <li>Utilizzare il Servizio per scopi illegali o non autorizzati</li>
-        <li>Tentare di accedere ai sistemi, ai dati o agli account di altri utenti</li>
-        <li>Effettuare attività di reverse engineering, decompilazione o disassemblaggio dell'app</li>
-        <li>Caricare contenuti illeciti, offensivi, falsi o che violino diritti di terzi</li>
-        <li>Utilizzare strumenti automatici (bot, scraper) per accedere o raccogliere dati dal Servizio</li>
-        <li>Interferire con il corretto funzionamento dell'infrastruttura del Servizio</li>
-        <li>Creare account multipli per aggirare limitazioni o sanzioni</li>
-        <li>Commercializzare l'accesso al proprio account a terzi</li>
+        <li>Mantenere la <strong>riservatezza delle credenziali</strong></li>
+        <li>Non condividere l'account con terze parti</li>
+        <li>Notificare immediatamente al Fornitore qualsiasi accesso non autorizzato: <a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a></li>
+        <li>Fornire informazioni veritiere in fase di registrazione</li>
       </ul>
-      <p>La violazione di queste disposizioni può comportare la sospensione o la cancellazione definitiva dell'account, senza rimborso di eventuali abbonamenti attivi, nonché l'adozione di azioni legali ove appropriato.</p>
+      <p>Il Fornitore non è responsabile di perdite derivanti dall'uso non autorizzato dell'account per cause imputabili all'Utente.</p>
     </section>
 
     <!-- ===== 6 ===== -->
     <section>
-      <h2>6. Abbonamento Premium</h2>
-
-      <h3>6.1 — Funzionalità</h3>
-      <p>L'abbonamento Premium di Calorino rimuove la pubblicità e sblocca funzionalità avanzate. I dettagli delle funzionalità incluse nel piano Premium sono descritti nell'App e possono essere aggiornati nel tempo.</p>
-
-      <h3>6.2 — Pagamenti e Rinnovo</h3>
-      <p>Gli acquisti in-app e gli abbonamenti sono gestiti esclusivamente tramite <strong>Apple App Store</strong>. I pagamenti sono soggetti ai Termini e Condizioni di Apple. L'abbonamento si rinnova automaticamente al termine di ogni periodo salvo disdetta.</p>
-
-      <h3>6.3 — Cancellazione e Rimborsi</h3>
-      <p>Puoi cancellare il rinnovo automatico in qualsiasi momento tramite <em>Impostazioni → Il tuo nome → Abbonamenti</em> su iOS, almeno 24 ore prima della data di rinnovo. I rimborsi sono gestiti direttamente da Apple secondo le relative politiche. Il Fornitore non ha la possibilità di elaborare rimborsi diretti per acquisti effettuati tramite App Store.</p>
-
-      <h3>6.4 — Modifiche al Prezzo</h3>
-      <p>Il Fornitore si riserva il diritto di modificare il prezzo dell'abbonamento. Le variazioni di prezzo saranno comunicate prima del rinnovo successivo, come previsto dalle politiche di Apple.</p>
+      <h2>6. Modalità Offline</h2>
+      <p>Calorino supporta la registrazione dei pasti in assenza di connessione internet. I dati inseriti offline vengono salvati temporaneamente nel database locale del dispositivo e sincronizzati automaticamente con i server Supabase non appena la connessione è ripristinata.</p>
+      <p>Il Fornitore non è responsabile della perdita di dati offline causata da disinstallazione dell'app, guasto del dispositivo o cancellazione dei dati dell'app prima che la sincronizzazione sia avvenuta.</p>
     </section>
 
     <!-- ===== 7 ===== -->
     <section>
-      <h2>7. Pubblicità</h2>
-      <p>La versione gratuita di Calorino include annunci pubblicitari erogati da <strong>Google AdMob</strong>. Utilizzando la versione gratuita, accetti la visualizzazione di tali annunci.</p>
-      <p>Il Fornitore non è responsabile per il contenuto degli annunci di terze parti né per i prodotti o servizi pubblicizzati. Per informazioni sulla gestione dei dati pubblicitari, consulta la <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">politica sulla pubblicità di Google</a>.</p>
-      <p>L'abbonamento Premium rimuove completamente la pubblicità.</p>
+      <h2>7. Condotte Vietate</h2>
+      <p>Nell'utilizzo del Servizio è espressamente vietato:</p>
+      <ul>
+        <li>Utilizzare il Servizio per scopi illegali o non autorizzati</li>
+        <li>Tentare di accedere ai sistemi, dati o account di altri utenti</li>
+        <li>Effettuare reverse engineering, decompilazione o disassemblaggio dell'app</li>
+        <li>Utilizzare strumenti automatici (bot, scraper) per accedere al Servizio o eludere i limiti di quota</li>
+        <li>Interferire con il corretto funzionamento dell'infrastruttura</li>
+        <li>Creare account multipli per aggirare limitazioni o sanzioni</li>
+        <li>Commercializzare l'accesso al proprio account</li>
+        <li>Caricare o inviare contenuti illeciti, offensivi o che violino diritti di terzi</li>
+      </ul>
+      <p>La violazione può comportare sospensione o cancellazione dell'account, senza rimborso di abbonamenti attivi, nonché azioni legali ove appropriato.</p>
     </section>
 
     <!-- ===== 8 ===== -->
     <section>
-      <h2>8. Contenuti dell'Utente</h2>
-      <p>L'Utente mantiene la titolarità di tutti i dati e i contenuti inseriti nell'app (pasti, foto, note). Fornendo tali contenuti al Servizio, concede al Fornitore una licenza limitata, non esclusiva, gratuita e revocabile per elaborarli esclusivamente allo scopo di erogare il Servizio.</p>
-      <p>L'Utente garantisce di possedere i diritti necessari sui contenuti caricati e di non violare diritti di terze parti.</p>
+      <h2>8. Abbonamento Premium</h2>
+
+      <h3>8.1 — Funzionalità</h3>
+      <p>L'abbonamento Premium rimuove la pubblicità, elimina i limiti di quota AI giornaliera e sblocca funzionalità avanzate. I dettagli aggiornati sono disponibili nell'App.</p>
+
+      <h3>8.2 — Pagamenti e Rinnovo</h3>
+      <p>Gli acquisti in-app e gli abbonamenti sono gestiti esclusivamente tramite <strong>Apple App Store</strong>. L'abbonamento si rinnova automaticamente al termine di ogni periodo salvo disdetta.</p>
+
+      <h3>8.3 — Cancellazione e Rimborsi</h3>
+      <p>Puoi cancellare il rinnovo automatico tramite <em>Impostazioni → Il tuo nome → Abbonamenti</em> su iOS, almeno 24 ore prima della data di rinnovo. I rimborsi sono gestiti direttamente da Apple secondo le relative politiche.</p>
+
+      <h3>8.4 — Modifiche al Prezzo</h3>
+      <p>Eventuali variazioni di prezzo saranno comunicate prima del rinnovo successivo, come previsto dalle politiche Apple.</p>
     </section>
 
     <!-- ===== 9 ===== -->
     <section>
-      <h2>9. Proprietà Intellettuale</h2>
-      <p>L'applicazione Calorino, inclusi il suo codice sorgente, grafica, interfaccia utente, marchi, loghi e contenuti originali, è di proprietà esclusiva di <strong>Alessio Rongione</strong> e protetta dalle leggi sul diritto d'autore e sulla proprietà intellettuale applicabili.</p>
-      <p>È vietata qualsiasi riproduzione, distribuzione, modifica o utilizzo commerciale del Servizio o dei suoi componenti senza preventiva autorizzazione scritta del Fornitore.</p>
+      <h2>9. Pubblicità</h2>
+      <p>La versione gratuita include due tipi di annunci erogati da <strong>Google AdMob</strong>:</p>
+      <ul>
+        <li><strong>Banner pubblicitari</strong>: visualizzati nella parte inferiore di alcune schermate</li>
+        <li><strong>Annunci con premio (Rewarded Ads)</strong>: video opzionali che l'utente può scegliere di guardare in cambio di bonus (vedi sezione 3)</li>
+      </ul>
+      <p>Il Fornitore non è responsabile del contenuto degli annunci di terze parti. L'abbonamento Premium rimuove completamente la pubblicità.</p>
     </section>
 
     <!-- ===== 10 ===== -->
     <section>
-      <h2>10. Esclusione di Garanzie</h2>
-      <p>Fermo restando quanto previsto dalla normativa vigente a tutela dei consumatori, il Servizio è fornito <strong>"così come è" (as-is)</strong> e <strong>"secondo disponibilità"</strong>. Il Fornitore non rilascia garanzie esplicite o implicite riguardo a:</p>
-      <ul>
-        <li>Continuità, disponibilità ininterrotta o assenza di errori del Servizio</li>
-        <li>Accuratezza assoluta dei dati nutrizionali calcolati</li>
-        <li>Idoneità del Servizio a scopi medici o clinici specifici</li>
-        <li>Compatibilità futura con tutti i dispositivi e versioni di iOS</li>
-      </ul>
+      <h2>10. Contenuti dell'Utente</h2>
+      <p>L'Utente mantiene la titolarità di tutti i dati inseriti nell'app. Fornendo tali dati, concede al Fornitore una licenza limitata, non esclusiva, gratuita e revocabile per elaborarli al solo scopo di erogare il Servizio. L'Utente garantisce di possedere i diritti necessari sui contenuti caricati (es. foto, file dieta).</p>
     </section>
 
     <!-- ===== 11 ===== -->
     <section>
-      <h2>11. Limitazione di Responsabilità</h2>
-      <p>Nei limiti consentiti dalla legge applicabile, il Fornitore non sarà responsabile per:</p>
-      <ul>
-        <li>Danni indiretti, incidentali, speciali o consequenziali derivanti dall'uso o dall'impossibilità di utilizzo del Servizio</li>
-        <li>Perdita di dati derivante da malfunzionamenti tecnici o da cancellazione dell'account</li>
-        <li>Decisioni di natura alimentare, medica o di salute prese dall'Utente sulla base dei dati forniti dall'app</li>
-        <li>Interruzioni del Servizio dovute a manutenzione, aggiornamenti o cause di forza maggiore</li>
-        <li>Comportamenti o contenuti di terze parti (inclusi i fornitori di servizi indicati nella Privacy Policy)</li>
-      </ul>
-      <p>La responsabilità complessiva del Fornitore nei confronti dell'Utente per qualsiasi causa è in ogni caso limitata all'importo pagato dall'Utente per il Servizio negli ultimi 12 mesi precedenti all'evento dannoso, o a €10 qualora non sia stato effettuato alcun pagamento.</p>
-      <p>Nulla in questi Termini esclude o limita la responsabilità del Fornitore per morte o lesioni personali causate da negligenza, per frode o per qualsiasi altra responsabilità che non possa essere esclusa per legge.</p>
+      <h2>11. Proprietà Intellettuale</h2>
+      <p>L'applicazione Calorino, inclusi codice sorgente, grafica, interfaccia utente, marchi e contenuti originali, è di proprietà esclusiva di <strong>Alessio Rongione</strong> e protetta dalle leggi sul diritto d'autore. È vietata qualsiasi riproduzione, distribuzione o utilizzo commerciale senza autorizzazione scritta.</p>
     </section>
 
     <!-- ===== 12 ===== -->
     <section>
-      <h2>12. Indennizzo</h2>
-      <p>L'Utente si impegna a manlevare e tenere indenne il Fornitore da qualsiasi pretesa, responsabilità, danno, costo o spesa (incluse le spese legali ragionevoli) derivanti da: (a) violazione di questi Termini da parte dell'Utente; (b) uso improprio o illecito del Servizio; (c) violazione di diritti di terzi da parte dell'Utente.</p>
+      <h2>12. Esclusione di Garanzie</h2>
+      <p>Fermo restando quanto previsto dalla normativa a tutela dei consumatori, il Servizio è fornito <strong>"così come è"</strong>. Il Fornitore non garantisce:</p>
+      <ul>
+        <li>Continuità o disponibilità ininterrotta del Servizio</li>
+        <li>Accuratezza assoluta dei dati nutrizionali (AI, barcode o import)</li>
+        <li>Disponibilità costante degli annunci con premio</li>
+        <li>Idoneità del Servizio per scopi medici o clinici specifici</li>
+        <li>Compatibilità futura con tutte le versioni di iOS</li>
+      </ul>
     </section>
 
     <!-- ===== 13 ===== -->
     <section>
-      <h2>13. Modifiche al Servizio e ai Termini</h2>
-      <p>Il Fornitore si riserva il diritto di:</p>
+      <h2>13. Limitazione di Responsabilità</h2>
+      <p>Nei limiti consentiti dalla legge, il Fornitore non sarà responsabile per:</p>
       <ul>
-        <li>Modificare, aggiornare o interrompere funzionalità del Servizio in qualsiasi momento</li>
-        <li>Aggiornare i presenti Termini di Servizio</li>
+        <li>Danni indiretti o consequenziali derivanti dall'uso del Servizio</li>
+        <li>Perdita di dati causata da malfunzionamenti tecnici o da cancellazione dell'account</li>
+        <li>Perdita di dati offline non ancora sincronizzati al momento di un guasto</li>
+        <li>Decisioni alimentari o di salute prese sulla base dei dati forniti dall'app</li>
+        <li>Inaccuratezze nei dati provenienti da Open Food Facts, UPCitemdb o da file importati</li>
+        <li>Interruzioni causate da manutenzione, aggiornamenti o forza maggiore</li>
+        <li>Comportamenti di terze parti (Google, Apple, Supabase, ecc.)</li>
       </ul>
-      <p>In caso di modifiche <strong>sostanziali</strong> ai Termini, l'Utente sarà informato tramite notifica in-app o via email con ragionevole anticipo prima dell'entrata in vigore. L'uso continuato del Servizio dopo tale data costituisce accettazione dei nuovi Termini. Se l'Utente non accetta le modifiche, può eliminare il proprio account e cessare l'utilizzo del Servizio.</p>
+      <p>La responsabilità complessiva del Fornitore è limitata all'importo pagato dall'Utente negli ultimi 12 mesi, o a €10 in assenza di pagamenti. Nulla esclude la responsabilità per morte, lesioni personali da negligenza o frode.</p>
     </section>
 
     <!-- ===== 14 ===== -->
     <section>
-      <h2>14. Cessazione del Servizio e dell'Account</h2>
-
-      <h3>14.1 — Cancellazione da parte dell'Utente</h3>
-      <p>L'Utente può eliminare il proprio account in qualsiasi momento tramite <strong>Impostazioni → Zona Pericolosa → Elimina account</strong>. La cancellazione è irreversibile: tutti i dati personali vengono eliminati permanentemente entro 30 giorni.</p>
-
-      <h3>14.2 — Sospensione da parte del Fornitore</h3>
-      <p>Il Fornitore si riserva il diritto di sospendere o cancellare l'account dell'Utente in caso di violazione dei presenti Termini, senza obbligo di preavviso. In caso di sospensione ingiustificata, il Fornitore provvederà al rimborso proporzionale di eventuali abbonamenti prepagati.</p>
-
-      <h3>14.3 — Interruzione del Servizio</h3>
-      <p>Il Fornitore si riserva il diritto di interrompere definitivamente il Servizio, dandone comunicazione con almeno <strong>30 giorni</strong> di preavviso tramite l'App o via email. In tal caso, gli abbonamenti attivi saranno rimborsati in proporzione al periodo residuo, nei limiti delle politiche di Apple.</p>
+      <h2>14. Indennizzo</h2>
+      <p>L'Utente si impegna a manlevare il Fornitore da qualsiasi pretesa derivante da: (a) violazione di questi Termini; (b) uso improprio del Servizio; (c) violazione di diritti di terzi.</p>
     </section>
 
     <!-- ===== 15 ===== -->
     <section>
-      <h2>15. Legge Applicabile e Foro Competente</h2>
-      <p>I presenti Termini di Servizio sono regolati dalla <strong>legge italiana</strong> e interpretati in conformità con essa, fatte salve le disposizioni inderogabili a tutela dei consumatori previste dalla normativa del Paese di residenza dell'Utente.</p>
-      <p>Per qualsiasi controversia derivante dall'interpretazione, dall'esecuzione o dalla validità dei presenti Termini, le parti tenteranno in primo luogo una risoluzione amichevole. In mancanza di accordo, il foro competente è quello di <strong>Roma (Italia)</strong>, salvo diversa disposizione inderogabile di legge a tutela dell'Utente consumatore.</p>
-      <p>Per la risoluzione alternativa delle controversie, l'Utente può altresì rivolgersi alla piattaforma ODR (Online Dispute Resolution) della Commissione Europea: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+      <h2>15. Modifiche al Servizio e ai Termini</h2>
+      <p>Il Fornitore può modificare funzionalità o Termini in qualsiasi momento. In caso di modifiche sostanziali, l'Utente sarà informato tramite notifica in-app o email con ragionevole anticipo. L'uso continuato costituisce accettazione. Se non accetti, puoi eliminare l'account e cessare l'utilizzo.</p>
     </section>
 
     <!-- ===== 16 ===== -->
     <section>
-      <h2>16. Disposizioni Generali</h2>
-      <ul>
-        <li><strong>Interezza dell'accordo:</strong> I presenti Termini, unitamente alla Privacy Policy, costituiscono l'intero accordo tra le parti in merito all'oggetto e sostituiscono qualsiasi precedente accordo o comunicazione.</li>
-        <li><strong>Nullità parziale:</strong> Se una disposizione di questi Termini è ritenuta nulla o inapplicabile, le restanti disposizioni rimangono pienamente in vigore.</li>
-        <li><strong>Rinuncia:</strong> Il mancato esercizio di un diritto previsto da questi Termini non costituisce rinuncia a esercitarlo in futuro.</li>
-        <li><strong>Cessione:</strong> L'Utente non può cedere i propri diritti o obblighi derivanti da questi Termini senza il consenso scritto del Fornitore. Il Fornitore può cedere i propri diritti in caso di fusione, acquisizione o vendita dell'attività, previa comunicazione all'Utente.</li>
-      </ul>
+      <h2>16. Cessazione del Servizio e dell'Account</h2>
+
+      <h3>16.1 — Cancellazione da parte dell'Utente</h3>
+      <p>L'Utente può eliminare l'account in qualsiasi momento da <strong>Impostazioni → Zona Pericolosa → Elimina account</strong>. La cancellazione è irreversibile: tutti i dati sono eliminati entro 30 giorni.</p>
+
+      <h3>16.2 — Sospensione da parte del Fornitore</h3>
+      <p>Il Fornitore può sospendere l'account in caso di violazione dei Termini, con eventuale rimborso proporzionale degli abbonamenti prepagati in caso di sospensione ingiustificata.</p>
+
+      <h3>16.3 — Interruzione definitiva del Servizio</h3>
+      <p>Il Fornitore darà preavviso di almeno <strong>30 giorni</strong> prima di interrompere definitivamente il Servizio. Gli abbonamenti attivi saranno rimborsati in proporzione, nei limiti delle politiche Apple.</p>
     </section>
 
     <!-- ===== 17 ===== -->
     <section>
-      <h2>17. Contatti</h2>
-      <p>Per domande, segnalazioni o richieste relative ai presenti Termini di Servizio:</p>
+      <h2>17. Legge Applicabile e Foro Competente</h2>
+      <p>I presenti Termini sono regolati dalla <strong>legge italiana</strong>, fatte salve le disposizioni inderogabili a tutela dei consumatori del Paese di residenza dell'Utente.</p>
+      <p>Per qualsiasi controversia le parti tenteranno in primo luogo una risoluzione amichevole. In mancanza di accordo, il foro competente è quello di <strong>Roma (Italia)</strong>, salvo diversa disposizione inderogabile di legge a tutela dell'Utente consumatore (che conserva il diritto di adire il tribunale del proprio luogo di residenza).</p>
+      <p>Per la risoluzione alternativa delle controversie: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a> (piattaforma ODR della Commissione Europea).</p>
+    </section>
+
+    <!-- ===== 18 ===== -->
+    <section>
+      <h2>18. Disposizioni Generali</h2>
+      <ul>
+        <li><strong>Interezza dell'accordo:</strong> Questi Termini e la Privacy Policy costituiscono l'intero accordo tra le parti.</li>
+        <li><strong>Nullità parziale:</strong> Se una disposizione è ritenuta nulla, le restanti rimangono in vigore.</li>
+        <li><strong>Rinuncia:</strong> Il mancato esercizio di un diritto non costituisce rinuncia futura.</li>
+        <li><strong>Cessione:</strong> L'Utente non può cedere i propri diritti senza consenso scritto del Fornitore.</li>
+      </ul>
+    </section>
+
+    <!-- ===== 19 ===== -->
+    <section>
+      <h2>19. Contatti</h2>
       <div class="contact-box">
         <p><strong>Alessio Rongione</strong></p>
         <p>Email: <a href="mailto:alessiorongione0598@gmail.com">alessiorongione0598@gmail.com</a></p>
