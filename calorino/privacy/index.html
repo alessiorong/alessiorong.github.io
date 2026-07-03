@@ -245,7 +245,7 @@
       <h1>Privacy Policy</h1>
       <div class="doc-meta">
         <span class="badge">GDPR Compliant</span>
-        Ultimo aggiornamento: 3 luglio 2026 &nbsp;·&nbsp; Versione 1.4
+        Ultimo aggiornamento: 3 luglio 2026 &nbsp;·&nbsp; Versione 1.5
       </div>
     </div>
 
@@ -281,18 +281,20 @@
       <h3>2.2 — Dati di Salute e Nutrizione</h3>
       <p>Questi dati rientrano nella categoria dei <strong>dati relativi alla salute</strong> ai sensi dell'Art. 9 GDPR. Il loro trattamento avviene su tuo consenso esplicito (Art. 9(2)(a) GDPR).</p>
       <ul>
+        <li><strong>Dati fisici dell'onboarding</strong>: altezza (cm), età, genere, livello di attività fisica e tipo di obiettivo dietetico (es. perdita di peso, mantenimento), forniti volontariamente durante la configurazione iniziale dell'app</li>
         <li>Peso corporeo e storico delle misurazioni</li>
         <li>Obiettivi calorici e macro-nutrienti giornalieri (calorie, proteine, carboidrati, grassi)</li>
         <li>Pasti registrati con relativi alimenti, porzioni e valori nutrizionali</li>
         <li>Diete personalizzate e piani alimentari importati</li>
         <li>Dati di aderenza alla dieta, streak giornaliero e progressi nel tempo</li>
-        <li>Consumo di acqua giornaliero (se utilizzi i promemoria idratazione)</li>
+        <li>Consumo di acqua giornaliero e configurazione dei promemoria idratazione</li>
         <li>Contatori di utilizzo AI giornaliero (numero di chiamate effettuate)</li>
         <li>Cronologia degli accessi a funzionalità sbloccate tramite pubblicità</li>
       </ul>
 
-      <h3>2.3 — Immagini dei Pasti e delle Diete</h3>
-      <p>Se utilizzi la fotocamera per analizzare un pasto o importare una dieta, l'immagine viene inviata in modo sicuro ai server di Supabase (Edge Functions) che la inoltrano a <strong>Google Gemini AI</strong> per il riconoscimento degli alimenti o per l'estrazione dei dati dietetici. <strong>Le immagini non vengono conservate permanentemente</strong> una volta completata l'analisi.</p>
+      <h3>2.3 — Immagini dei Pasti e File delle Diete</h3>
+      <p>Se utilizzi la fotocamera per analizzare un pasto, l'immagine viene inviata in modo sicuro ai server di Supabase (Edge Functions) che la inoltrano a <strong>Google Gemini AI</strong> per il riconoscimento degli alimenti. <strong>Le immagini dei pasti non vengono conservate</strong> dopo il completamento dell'analisi.</p>
+      <p>Se importi un piano dietetico tramite file <strong>PDF, DOCX o immagine</strong>, il file viene caricato e conservato su <strong>Supabase Storage</strong> in modo permanente per consentire la visualizzazione della dieta nell'app. Il file può essere eliminato in qualsiasi momento dalla sezione "Diete" dell'app; l'eliminazione dell'account rimuove tutti i file caricati entro 30 giorni.</p>
       <p>La fotocamera è utilizzata anche per la <strong>scansione di codici a barre</strong> (vedi sezione 2.5): in questo caso non viene salvata alcuna immagine, viene letto solo il codice numerico.</p>
 
       <h3>2.4 — Dati Vocali</h3>
@@ -306,7 +308,7 @@
         <li><strong>UPCitemdb</strong> (database prodotti commerciali, fallback)</li>
         <li><strong>Google Gemini AI</strong> tramite Supabase Edge Functions (stima nutrizionale, secondo fallback)</li>
       </ul>
-      <p>I risultati delle scansioni recenti sono memorizzati in una <strong>cache locale cifrata</strong> sul dispositivo (massimo 50 prodotti) per evitare chiamate ripetute alla rete.</p>
+      <p>I risultati delle scansioni recenti sono memorizzati in una <strong>cache locale non cifrata</strong> sul dispositivo (massimo 50 prodotti) per evitare chiamate ripetute alla rete. La cache contiene esclusivamente nomi e valori nutrizionali di prodotti pubblici, non dati personali dell'utente.</p>
 
       <h3>2.6 — Dati Tecnici e di Utilizzo</h3>
       <ul>
@@ -365,6 +367,7 @@
         <div class="provider-name">Google LLC — Gemini AI</div>
         <p><strong>Ruolo:</strong> Motore di intelligenza artificiale per il calcolo dei valori nutrizionali da testo, voce e immagini</p>
         <p><strong>Dati trattati:</strong> Testo descrittivo degli alimenti, trascrizioni vocali dei pasti, immagini dei pasti e delle diete (ricevuti tramite Supabase Edge Functions)</p>
+        <p><strong>Nota — Web Grounding:</strong> Per prodotti alimentari branded (es. "Barilla Fusilli 500g"), Gemini AI può attivare una ricerca sul web tramite Google Search per recuperare i valori nutrizionali ufficiali del prodotto. In tal caso, il nome del prodotto viene inviato anche al motore di ricerca Google, soggetto alla medesima Privacy Policy di Google LLC.</p>
         <p><strong>Sede:</strong> USA — trasferimento con Standard Contractual Clauses (SCC)</p>
         <p><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
       </div>
@@ -528,9 +531,11 @@
       <ul>
         <li><strong>Fotocamera</strong>: scatto di foto per analisi nutrizionale di pasti e import diete tramite AI; scansione di codici a barre di prodotti alimentari</li>
         <li><strong>Galleria foto (lettura)</strong>: selezione di immagini esistenti per l'analisi nutrizionale o l'import di diete</li>
+        <li><strong>Galleria foto (scrittura)</strong>: salvataggio di screenshot del piano dietetico sul rullino fotografico, su richiesta esplicita dell'utente</li>
         <li><strong>Microfono</strong>: registrazione audio per l'input vocale dei pasti</li>
         <li><strong>Riconoscimento vocale</strong>: trascrizione dell'audio in testo tramite il servizio Apple SFSpeechRecognizer</li>
-        <li><strong>Notifiche</strong>: invio di promemoria locali per l'idratazione giornaliera</li>
+        <li><strong>Face ID / Touch ID</strong>: autenticazione biometrica per l'accesso sicuro all'app tramite il sistema operativo iOS (le credenziali biometriche non lasciano mai il dispositivo)</li>
+        <li><strong>Notifiche</strong>: invio di promemoria locali per i pasti (colazione, pranzo, merenda, cena) e per l'idratazione giornaliera, configurabili dall'utente</li>
         <li><strong>Accesso ai file</strong>: apertura di file PDF e DOCX dal dispositivo per l'import di piani alimentari</li>
         <li><strong>Tracciamento pubblicità (ATT)</strong>: utilizzo dell'IDFA per annunci personalizzati tramite AdMob (solo con consenso esplicito tramite il prompt ATT di Apple)</li>
       </ul>
